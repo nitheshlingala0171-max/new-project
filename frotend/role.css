@@ -1,0 +1,678 @@
+/* =========================================
+   KALASETU ROLE PAGE
+   ========================================= */
+
+:root {
+    --ivory: #f6ecdc;
+    --terracotta: #b95735;
+    --brown: #5a3528;
+    --dark-brown: #33231e;
+    --olive: #777b58;
+    --white: #ffffff;
+}
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--dark-brown);
+}
+
+
+/* =========================================
+   MAIN PAGE
+   ========================================= */
+
+.role-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+   ========================================= */
+
+.background {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("role-background.jpeg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   OVERLAY
+   ========================================= */
+
+.overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(246, 236, 220, 0.22);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   DECORATIVE LEAVES
+   ========================================= */
+
+.leaf {
+    position: fixed;
+
+    z-index: 2;
+
+    font-size: 80px;
+
+    color: var(--olive);
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+.leaf-left {
+    left: 20px;
+    top: 30%;
+
+    transform: rotate(-25deg);
+}
+
+.leaf-right {
+    right: 20px;
+    bottom: 25%;
+
+    transform: rotate(25deg);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.role-header {
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    padding-top: 20px;
+}
+
+
+/* =========================================
+   KALASETU LOGO
+
+   JPEG white background blend fix
+   ========================================= */
+
+.logo {
+    width: 125px;
+    height: 125px;
+
+    display: block;
+
+    margin: 0 auto 4px;
+
+    object-fit: contain;
+
+    /*
+       JPEG lo unna white square
+       background tho blend avvadaniki
+    */
+    mix-blend-mode: multiply;
+
+    /*
+       Slightly soft ga natural look kosam
+    */
+    filter: contrast(1.05);
+}
+
+
+/* =========================================
+   BRAND LINE
+   ========================================= */
+
+.brand-line {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 2px;
+}
+
+.brand-line span {
+    width: 70px;
+    height: 1px;
+
+    background: var(--brown);
+
+    opacity: 0.7;
+}
+
+.brand-line p {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: var(--brown);
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px 25px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   WELCOME
+   ========================================= */
+
+.welcome {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+    color: var(--terracotta);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   MAIN TITLE
+   ========================================= */
+
+.content h2 {
+    font-size: 42px;
+
+    color: var(--dark-brown);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.description {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: var(--brown);
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.cards {
+    width: 100%;
+
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.card {
+    padding: 35px 30px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(90, 53, 40, 0.25);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(51, 35, 30, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   CARD HOVER
+   ========================================= */
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(51, 35, 30, 0.25);
+}
+
+
+/* =========================================
+   CARD ICON
+   ========================================= */
+
+.card-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--ivory);
+
+    border: 1px solid rgba(90, 53, 40, 0.25);
+}
+
+
+/* =========================================
+   SVG ICON
+   ========================================= */
+
+.card-icon svg {
+    width: 45px;
+    height: 45px;
+
+    fill: none;
+
+    stroke: var(--terracotta);
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================
+   CREATOR ICON
+   ========================================= */
+
+.creator-icon svg {
+    stroke: var(--olive);
+}
+
+
+/* =========================================
+   CARD TITLE
+   ========================================= */
+
+.card h3 {
+    font-size: 26px;
+
+    color: var(--dark-brown);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+   ========================================= */
+
+.card p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--brown);
+
+    min-height: 72px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+   ========================================= */
+
+.continue-btn {
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background: var(--terracotta);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   ARROW
+   ========================================= */
+
+.continue-btn span {
+    margin-left: 8px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   BUTTON HOVER
+   ========================================= */
+
+.continue-btn:hover {
+    background: var(--brown);
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 20px;
+}
+
+.footer span {
+    width: 80px;
+    height: 1px;
+
+    background: var(--brown);
+
+    opacity: 0.5;
+}
+
+.footer p {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .content {
+        padding-top: 25px;
+    }
+
+    .content h2 {
+        font-size: 36px;
+    }
+
+    .cards {
+        gap: 20px;
+    }
+
+    .card {
+        padding: 28px 20px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    .role-header {
+        padding-top: 15px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+        width: 95px;
+        height: 95px;
+
+        display: block;
+
+        margin: 0 auto 4px;
+
+        object-fit: contain;
+
+        mix-blend-mode: multiply;
+
+        filter: contrast(1.05);
+    }
+
+
+    /* BRAND LINE */
+
+    .brand-line {
+        gap: 8px;
+    }
+
+    .brand-line span {
+        width: 35px;
+    }
+
+    .brand-line p {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* CONTENT */
+
+    .content {
+        padding: 22px 15px;
+    }
+
+
+    /* WELCOME */
+
+    .welcome {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* TITLE */
+
+    .content h2 {
+        font-size: 30px;
+    }
+
+
+    /* DESCRIPTION */
+
+    .description {
+        font-size: 14px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* CARDS */
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        max-width: 420px;
+    }
+
+
+    .card {
+        padding: 25px 20px;
+    }
+
+
+    /* CARD ICON */
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    /* CARD TITLE */
+
+    .card h3 {
+        font-size: 23px;
+    }
+
+
+    /* CARD TEXT */
+
+    .card p {
+        min-height: auto;
+
+        font-size: 13px;
+    }
+
+
+    /* HIDE LEAVES */
+
+    .leaf {
+        display: none;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 15px 10px;
+    }
+
+    .footer span {
+        width: 30px;
+    }
+
+    .footer p {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+}
