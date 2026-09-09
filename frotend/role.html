@@ -1,79 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kalasetu - Choose Your Role</title>
+    <title>Choose Your Path</title>
 
     <link rel="stylesheet" href="role.css">
 </head>
 
 <body>
 
-    <main class="role-page">
+    <div class="role-page">
 
-        <!-- BACKGROUND IMAGE -->
-        <div class="background"></div>
-
-        <!-- BACKGROUND OVERLAY -->
+        <!-- Background overlay -->
         <div class="overlay"></div>
 
+        <div class="content">
 
-        <!-- DECORATIVE LEAVES -->
-        <div class="leaf leaf-left">❧</div>
-        <div class="leaf leaf-right">❧</div>
+            <!-- TOP LOGO / BRAND -->
+            <div class="brand">
+                <div class="brand-symbol">
+    <img src="images/kalasetu-logo.png" alt="Kalasetu Logo">
+</div>
 
+                <h1>KALASETU</h1>
 
-        <!-- HEADER -->
-        <header class="role-header">
-
-            <!-- KALASETU LOGO -->
-            <img
-                src="./assets/images/kalasetu-logo.jpeg"
-                alt="Kalasetu Logo"
-                class="logo"
-            >
-
-            <div class="brand-line">
-                <span></span>
-                <p>TRADITION • CRAFT • STORY</p>
-                <span></span>
+                <div class="brand-line">
+                    <span></span>
+                    <p>TRADITION • CRAFT • STORY</p>
+                    <span></span>
+                </div>
             </div>
 
-        </header>
 
+            <!-- HEADING -->
+            <div class="heading">
 
-        <!-- MAIN CONTENT -->
-        <section class="content">
+                <p class="welcome">
+                    WELCOME TO KALASETU
+                </p>
 
-            <p class="welcome">
-                WELCOME TO KALASETU
-            </p>
+                <h2>Choose Your Path</h2>
 
-            <h2>Choose Your Path</h2>
+                <p class="description">
+                    Every craft carries a story. Choose how you would like
+                    to be a part of the journey.
+                </p>
 
-            <p class="description">
-                Every craft carries a story. Choose how you would like
-                to be a part of the journey.
-            </p>
+            </div>
 
 
             <!-- ROLE CARDS -->
             <div class="cards">
 
-
                 <!-- CUSTOMER CARD -->
                 <div class="card">
 
-                    <div class="card-icon customer-icon">
+                    <div class="corner top-left">❧</div>
+                    <div class="corner top-right">❧</div>
 
-                        <svg viewBox="0 0 64 64">
-                            <path d="M12 20h40l-4 30H16L12 20z"></path>
-                            <path d="M22 20a10 10 0 0 1 20 0"></path>
-                        </svg>
-
+                    <div class="person-image">
+                        <img src="images/customer.png" alt="Customer">
                     </div>
 
                     <h3>Customer</h3>
@@ -84,14 +72,13 @@
                         something meaningful.
                     </p>
 
-                    <button
-                        class="continue-btn"
-                        onclick="goToCustomer()">
-
+                    <button onclick="continueAs('customer')">
                         CONTINUE
                         <span>→</span>
-
                     </button>
+
+                    <div class="corner bottom-left">❧</div>
+                    <div class="corner bottom-right">❧</div>
 
                 </div>
 
@@ -99,14 +86,11 @@
                 <!-- CREATOR CARD -->
                 <div class="card">
 
-                    <div class="card-icon creator-icon">
+                    <div class="corner top-left">❧</div>
+                    <div class="corner top-right">❧</div>
 
-                        <svg viewBox="0 0 64 64">
-                            <path d="M16 45c7-5 10-12 10-21 0-5 3-8 8-8 8 0 14 6 14 14 0 12-9 20-23 20H16z"></path>
-                            <path d="M30 19l5 5"></path>
-                            <path d="M40 14l4 4"></path>
-                        </svg>
-
+                    <div class="person-image">
+                        <img src="images/creator.png" alt="Creator">
                     </div>
 
                     <h3>Creator</h3>
@@ -117,51 +101,38 @@
                         people who value your craft.
                     </p>
 
-                    <button
-                        class="continue-btn"
-                        onclick="goToCreator()">
-
+                    <button onclick="continueAs('creator')">
                         CONTINUE
                         <span>→</span>
-
                     </button>
+
+                    <div class="corner bottom-left">❧</div>
+                    <div class="corner bottom-right">❧</div>
 
                 </div>
 
             </div>
 
-        </section>
+
+            <!-- BOTTOM -->
+            <div class="bottom-text">
+
+                <span>✦</span>
+
+                HANDMADE WITH TRADITION
+                <b>•</b>
+                CONNECTED THROUGH STORIES
+
+                <span>✦</span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
-        <!-- FOOTER -->
-        <footer class="footer">
-
-            <span></span>
-
-            <p>
-                HANDMADE WITH TRADITION • CONNECTED THROUGH STORIES
-            </p>
-
-            <span></span>
-
-        </footer>
-
-    </main>
-
-
-    <!-- JAVASCRIPT -->
-    <script>
-
-        function goToCustomer() {
-            window.location.href = "customer-login.html";
-        }
-
-        function goToCreator() {
-            window.location.href = "creator-login.html";
-        }
-
-    </script>
+    <script src="role.js"></script>
 
 </body>
-
 </html>

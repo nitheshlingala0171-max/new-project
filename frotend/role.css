@@ -1,20 +1,5 @@
-/* =========================================
-   KALASETU ROLE PAGE
-   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
 
-:root {
-    --ivory: #f6ecdc;
-    --terracotta: #b95735;
-    --brown: #5a3528;
-    --dark-brown: #33231e;
-    --olive: #777b58;
-    --white: #ffffff;
-}
-
-
-/* =========================================
-   RESET
-   ========================================= */
 
 * {
     margin: 0;
@@ -22,657 +7,483 @@
     box-sizing: border-box;
 }
 
+
 html,
 body {
     width: 100%;
     min-height: 100%;
 }
 
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--dark-brown);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
 }
 
 
-/* =========================================
-   MAIN PAGE
-   ========================================= */
+/* ================================
+   MAIN BACKGROUND
+================================ */
 
 .role-page {
     position: relative;
+
     width: 100%;
     min-height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-}
-
-
-/* =========================================
-   BACKGROUND
-   ========================================= */
-
-.background {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    background-image: url("role-background.jpeg");
+    background-image: url("./images/background.png");
 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
 
-    z-index: 0;
+    display: flex;
+    justify-content: center;
 }
 
 
-/* =========================================
-   OVERLAY
-   ========================================= */
+/* Background colour overlay */
 
 .overlay {
-    position: fixed;
+    position: absolute;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
-    width: 100%;
-    height: 100vh;
-
-    background: rgba(246, 236, 220, 0.22);
+    background: rgba(255, 225, 190, 0.20);
 
     z-index: 1;
-
-    pointer-events: none;
 }
 
 
-/* =========================================
-   DECORATIVE LEAVES
-   ========================================= */
-
-.leaf {
-    position: fixed;
-
-    z-index: 2;
-
-    font-size: 80px;
-
-    color: var(--olive);
-
-    opacity: 0.35;
-
-    pointer-events: none;
-}
-
-.leaf-left {
-    left: 20px;
-    top: 30%;
-
-    transform: rotate(-25deg);
-}
-
-.leaf-right {
-    right: 20px;
-    bottom: 25%;
-
-    transform: rotate(25deg);
-}
-
-
-/* =========================================
-   HEADER
-   ========================================= */
-
-.role-header {
-    position: relative;
-
-    z-index: 5;
-
-    text-align: center;
-
-    padding-top: 20px;
-}
-
-
-/* =========================================
-   KALASETU LOGO
-
-   JPEG white background blend fix
-   ========================================= */
-
-.logo {
-    width: 125px;
-    height: 125px;
-
-    display: block;
-
-    margin: 0 auto 4px;
-
-    object-fit: contain;
-
-    /*
-       JPEG lo unna white square
-       background tho blend avvadaniki
-    */
-    mix-blend-mode: multiply;
-
-    /*
-       Slightly soft ga natural look kosam
-    */
-    filter: contrast(1.05);
-}
-
-
-/* =========================================
-   BRAND LINE
-   ========================================= */
-
-.brand-line {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 15px;
-
-    margin-top: 2px;
-}
-
-.brand-line span {
-    width: 70px;
-    height: 1px;
-
-    background: var(--brown);
-
-    opacity: 0.7;
-}
-
-.brand-line p {
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    color: var(--brown);
-}
-
-
-/* =========================================
-   CONTENT
-   ========================================= */
+/* ================================
+   MAIN CONTENT
+================================ */
 
 .content {
     position: relative;
 
-    z-index: 5;
+    z-index: 2;
 
     width: 100%;
+    max-width: 1100px;
 
-    max-width: 950px;
+    min-height: 100vh;
 
-    margin: 0 auto;
+    padding: 25px 25px 18px;
 
-    padding: 30px 20px 25px;
-
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
-/* =========================================
-   WELCOME
-   ========================================= */
+/* ================================
+   BRAND
+================================ */
+
+.brand {
+    text-align: center;
+
+    color: #3d2112;
+}
+
+
+.brand-symbol {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 4px;
+
+    border: 2px solid #9a5536;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.brand-symbol img {
+    width: 115%;
+    height: 115%;
+    display: block;
+    object-fit: cover;
+    transform: scale(1.05);
+}
+
+.brand h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
+    font-weight: 600;
+
+    letter-spacing: 7px;
+}
+
+
+.brand-line {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 1px;
+}
+
+
+.brand-line span {
+    width: 65px;
+
+    height: 1px;
+
+    background: #79543e;
+}
+
+
+.brand-line p {
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+
+    color: #634532;
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.heading {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #3d2112;
+}
+
 
 .welcome {
     font-size: 12px;
 
-    letter-spacing: 4px;
+    font-weight: 600;
 
-    font-weight: bold;
+    letter-spacing: 3px;
 
-    color: var(--terracotta);
+    color: #b35434;
 
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 
-/* =========================================
-   MAIN TITLE
-   ========================================= */
+.heading h2 {
+    font-family: "Cormorant Garamond", serif;
 
-.content h2 {
-    font-size: 42px;
+    font-size: 52px;
 
-    color: var(--dark-brown);
+    font-weight: 600;
 
-    margin-bottom: 12px;
+    line-height: 1;
 }
 
-
-/* =========================================
-   DESCRIPTION
-   ========================================= */
 
 .description {
-    max-width: 600px;
+    margin-top: 10px;
 
-    margin: 0 auto 35px;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size: 16px;
+    font-size: 17px;
 
-    line-height: 1.7;
-
-    color: var(--brown);
+    color: #624532;
 }
 
 
-/* =========================================
+/* ================================
    CARDS
-   ========================================= */
+================================ */
 
 .cards {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 24px;
+
     width: 100%;
 
-    max-width: 780px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 30px;
+    margin-top: 28px;
 }
 
 
-/* =========================================
-   CARD
-   ========================================= */
-
 .card {
-    padding: 35px 30px;
+    position: relative;
 
-    background: rgba(255, 255, 255, 0.88);
+    width: 365px;
+    height: 295px;
 
-    border: 1px solid rgba(90, 53, 40, 0.25);
+    padding: 18px 35px;
+
+    background: rgba(255, 249, 239, 0.86);
+
+    border: 1px solid rgba(255,255,255,0.8);
 
     border-radius: 18px;
 
     box-shadow:
-        0 10px 30px rgba(51, 35, 30, 0.18);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* =========================================
-   CARD HOVER
-   ========================================= */
-
-.card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 15px 35px rgba(51, 35, 30, 0.25);
-}
-
-
-/* =========================================
-   CARD ICON
-   ========================================= */
-
-.card-icon {
-    width: 75px;
-    height: 75px;
-
-    margin: 0 auto 18px;
+        0 8px 25px rgba(74, 41, 21, 0.18);
 
     display: flex;
 
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: var(--ivory);
-
-    border: 1px solid rgba(90, 53, 40, 0.25);
-}
-
-
-/* =========================================
-   SVG ICON
-   ========================================= */
-
-.card-icon svg {
-    width: 45px;
-    height: 45px;
-
-    fill: none;
-
-    stroke: var(--terracotta);
-
-    stroke-width: 2;
-
-    stroke-linecap: round;
-
-    stroke-linejoin: round;
-}
-
-
-/* =========================================
-   CREATOR ICON
-   ========================================= */
-
-.creator-icon svg {
-    stroke: var(--olive);
-}
-
-
-/* =========================================
-   CARD TITLE
-   ========================================= */
-
-.card h3 {
-    font-size: 26px;
-
-    color: var(--dark-brown);
-
-    margin-bottom: 12px;
-}
-
-
-/* =========================================
-   CARD DESCRIPTION
-   ========================================= */
-
-.card p {
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color: var(--brown);
-
-    min-height: 72px;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================================
-   CONTINUE BUTTON
-   ========================================= */
-
-.continue-btn {
-    border: none;
-
-    outline: none;
-
-    cursor: pointer;
-
-    padding: 13px 25px;
-
-    border-radius: 30px;
-
-    background: var(--terracotta);
-
-    color: var(--white);
-
-    font-family: inherit;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-/* =========================================
-   ARROW
-   ========================================= */
-
-.continue-btn span {
-    margin-left: 8px;
-
-    font-size: 17px;
-}
-
-
-/* =========================================
-   BUTTON HOVER
-   ========================================= */
-
-.continue-btn:hover {
-    background: var(--brown);
-
-    transform: translateX(3px);
-}
-
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-.footer {
-    position: relative;
-
-    z-index: 5;
-
-    margin-top: auto;
-
-    display: flex;
+    flex-direction: column;
 
     align-items: center;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    padding: 20px;
-}
-
-.footer span {
-    width: 80px;
-    height: 1px;
-
-    background: var(--brown);
-
-    opacity: 0.5;
-}
-
-.footer p {
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    color: var(--brown);
 
     text-align: center;
 }
 
 
-/* =========================================
-   TABLET
-   ========================================= */
+/* ================================
+   CUSTOMER / CREATOR IMAGE
+================================ */
 
-@media (max-width: 800px) {
+.person-image {
+    width: 100px;
+    height: 100px;
 
-    .content {
-        padding-top: 25px;
-    }
+    border-radius: 50%;
 
-    .content h2 {
-        font-size: 36px;
-    }
+    overflow: hidden;
 
-    .cards {
-        gap: 20px;
-    }
+    border: 3px solid #f8ecdc;
 
-    .card {
-        padding: 28px 20px;
-    }
+    box-shadow:
+        0 0 0 1px #8e684f;
+
+    margin-bottom: 7px;
+
+    background: #ead7c1;
 }
 
 
-/* =========================================
+.person-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ================================
+   CARD TITLE
+================================ */
+
+.card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    color: #4b2918;
+}
+
+
+/* ================================
+   CARD DESCRIPTION
+================================ */
+
+.card p {
+    margin-top: 2px;
+
+    font-size: 11.5px;
+
+    line-height: 1.55;
+
+    color: #694b38;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.card button {
+    margin-top: 12px;
+
+    width: 150px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #c65b37;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 4px 10px rgba(105, 47, 27, 0.25);
+}
+
+
+.card button span {
+    font-size: 17px;
+
+    margin-left: 8px;
+}
+
+
+.card button:hover {
+    background: #a9482b;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   CORNER DECORATION
+================================ */
+
+.corner {
+    position: absolute;
+
+    color: #9d8b6e;
+
+    opacity: 0.65;
+
+    font-size: 22px;
+}
+
+
+.top-left {
+    top: 9px;
+    left: 12px;
+}
+
+
+.top-right {
+    top: 9px;
+    right: 12px;
+
+    transform: rotate(90deg);
+}
+
+
+.bottom-left {
+    bottom: 7px;
+    left: 12px;
+
+    transform: rotate(-90deg);
+}
+
+
+.bottom-right {
+    bottom: 7px;
+    right: 12px;
+
+    transform: rotate(180deg);
+}
+
+
+/* ================================
+   BOTTOM TEXT
+================================ */
+
+.bottom-text {
+    margin-top: auto;
+
+    padding-top: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #5d4635;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+
+.bottom-text span {
+    font-size: 17px;
+}
+
+
+.bottom-text b {
+    font-weight: 500;
+}
+
+
+/* ================================
    MOBILE
-   ========================================= */
+================================ */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
-    /* HEADER */
-
-    .role-header {
-        padding-top: 15px;
+    body {
+        overflow-y: auto;
     }
-
-
-    /* LOGO */
-
-    .logo {
-        width: 95px;
-        height: 95px;
-
-        display: block;
-
-        margin: 0 auto 4px;
-
-        object-fit: contain;
-
-        mix-blend-mode: multiply;
-
-        filter: contrast(1.05);
-    }
-
-
-    /* BRAND LINE */
-
-    .brand-line {
-        gap: 8px;
-    }
-
-    .brand-line span {
-        width: 35px;
-    }
-
-    .brand-line p {
-        font-size: 8px;
-
-        letter-spacing: 2px;
-    }
-
-
-    /* CONTENT */
 
     .content {
-        padding: 22px 15px;
+        padding: 20px 15px;
     }
 
-
-    /* WELCOME */
-
-    .welcome {
-        font-size: 9px;
-
-        letter-spacing: 3px;
-    }
-
-
-    /* TITLE */
-
-    .content h2 {
+    .brand h1 {
         font-size: 30px;
     }
 
+    .heading {
+        margin-top: 25px;
+    }
 
-    /* DESCRIPTION */
+    .heading h2 {
+        font-size: 42px;
+    }
 
     .description {
-        font-size: 14px;
-
-        margin-bottom: 25px;
+        font-size: 15px;
     }
-
-
-    /* CARDS */
 
     .cards {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+
+        align-items: center;
 
         gap: 18px;
-
-        max-width: 420px;
     }
-
 
     .card {
-        padding: 25px 20px;
+        width: min(92vw, 365px);
     }
 
+    .bottom-text {
+        margin-top: 25px;
 
-    /* CARD ICON */
-
-    .card-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .card-icon svg {
-        width: 36px;
-        height: 36px;
-    }
-
-
-    /* CARD TITLE */
-
-    .card h3 {
-        font-size: 23px;
-    }
-
-
-    /* CARD TEXT */
-
-    .card p {
-        min-height: auto;
-
-        font-size: 13px;
-    }
-
-
-    /* HIDE LEAVES */
-
-    .leaf {
-        display: none;
-    }
-
-
-    /* FOOTER */
-
-    .footer {
-        padding: 15px 10px;
-    }
-
-    .footer span {
-        width: 30px;
-    }
-
-    .footer p {
-        font-size: 7px;
-
-        letter-spacing: 1px;
+        font-size: 8px;
     }
 }
