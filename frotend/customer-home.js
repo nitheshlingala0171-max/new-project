@@ -1,171 +1,122 @@
-// ================= SEARCH =================
+ /* ================= FESTIVAL CAROUSEL ================= */
 
-const searchInput = document.getElementById("searchInput");
-const searchBtn = document.getElementById("searchBtn");
+let currentFestival = 0;
 
-searchBtn.addEventListener("click", function () {
+const festivalTrack = document.getElementById("festivalTrack");
 
-    const searchText = searchInput.value.trim();
+const totalFestivals = 3;
 
-    if (searchText === "") {
-        alert("Please enter what you are looking for.");
+
+function showFestival(index) {
+
+    if (index < 0) {
+        currentFestival = totalFestivals - 1;
+    }
+
+    else if (index >= totalFestivals) {
+        currentFestival = 0;
+    }
+
+    else {
+        currentFestival = index;
+    }
+
+    festivalTrack.style.transform =
+        `translateX(-${currentFestival * 100}%)`;
+}
+
+
+function nextFestival() {
+    showFestival(currentFestival + 1);
+}
+
+
+function previousFestival() {
+    showFestival(currentFestival - 1);
+}
+
+
+/* Automatic carousel */
+
+setInterval(function () {
+    nextFestival();
+}, 5000);
+
+
+/* ================= FESTIVAL BUTTON ================= */
+
+function exploreFestival(festivalName) {
+
+    alert(
+        festivalName +
+        " collection will be available here."
+    );
+}
+
+
+/* ================= CATEGORY ================= */
+
+function openCategory(categoryName) {
+
+    alert(
+        categoryName +
+        " category selected."
+    );
+}
+
+
+/* ================= PRODUCT ================= */
+
+function openProduct(productName) {
+
+    alert(
+        productName +
+        " selected."
+    );
+}
+
+
+/* ================= HEADER ICONS ================= */
+
+function showMessage(item) {
+
+    alert(item + " feature will be added soon.");
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchProducts() {
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const value =
+        searchInput.value.trim();
+
+    if (value === "") {
+
+        alert("Please enter something to search.");
+
         return;
     }
 
-    alert("Searching for: " + searchText);
-});
+    alert(
+        "Searching for: " + value
+    );
+}
 
 
-// Press Enter to search
-searchInput.addEventListener("keydown", function (event) {
+/* ================= ENTER KEY SEARCH ================= */
 
-    if (event.key === "Enter") {
-        searchBtn.click();
-    }
+document
+    .getElementById("searchInput")
+    .addEventListener("keydown", function (event) {
 
-});
+        if (event.key === "Enter") {
 
+            searchProducts();
 
-// ================= WISHLIST =================
-
-const heartButtons = document.querySelectorAll(".heart-btn");
-
-heartButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        this.classList.toggle("active");
-
-        if (this.classList.contains("active")) {
-            this.textContent = "♥";
-        } else {
-            this.textContent = "♡";
         }
 
     });
-
-});
-
-
-// ================= CATEGORIES =================
-
-const categoryCards = document.querySelectorAll(".category-card");
-
-categoryCards.forEach(function (card) {
-
-    card.addEventListener("click", function () {
-
-        const category = this.dataset.category;
-
-        alert("You selected: " + category);
-
-    });
-
-});
-
-
-// ================= VIEW ALL CATEGORIES =================
-
-document.getElementById("viewCategories").addEventListener("click", function () {
-
-    alert("All craft categories will be available here.");
-
-});
-
-
-// ================= VIEW FEATURED =================
-
-document.getElementById("viewFeatured").addEventListener("click", function () {
-
-    alert("More featured crafts will be available here.");
-
-});
-
-
-// ================= CRAFT DETAILS =================
-
-const detailButtons = document.querySelectorAll(".details-btn");
-
-detailButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        alert("Craft details page will open here.");
-
-    });
-
-});
-
-
-// ================= DISCOVER =================
-
-document.getElementById("discoverBtn").addEventListener("click", function () {
-
-    alert("Discover page will be created next.");
-
-});
-
-
-// ================= HEADER WISHLIST =================
-
-document.getElementById("wishlistBtn").addEventListener("click", function () {
-
-    alert("Wishlist page will be created next.");
-
-});
-
-
-// ================= CART =================
-
-document.getElementById("cartBtn").addEventListener("click", function () {
-
-    alert("Cart page will be created later.");
-
-});
-
-
-// ================= PROFILE =================
-
-document.getElementById("profileBtn").addEventListener("click", function () {
-
-    alert("Customer profile will be created later.");
-
-});
-
-
-// ================= BOTTOM NAVIGATION =================
-
-const navItems = document.querySelectorAll(".nav-item");
-
-navItems.forEach(function (item) {
-
-    item.addEventListener("click", function () {
-
-        const page = this.dataset.page;
-
-        if (page === "home") {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
-
-        else if (page === "discover") {
-            alert("Discover page will be created next.");
-        }
-
-        else if (page === "wishlist") {
-            alert("Wishlist page will be created later.");
-        }
-
-        else if (page === "orders") {
-            alert("Orders page will be created later.");
-        }
-
-        else if (page === "profile") {
-            alert("Profile page will be created later.");
-        }
-
-    });
-
-});

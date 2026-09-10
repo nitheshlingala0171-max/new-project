@@ -1,408 +1,428 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalasetu - Home</title>
+    <title>Kalasetu - Customer Home</title>
 
     <link rel="stylesheet" href="customer-home.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
+    <!-- ================= HEADER ================= -->
+    <header class="top-header">
 
-        <div class="brand">
-            <div class="logo-circle">
-                <img src="images/kalasetu-logo.png" alt="Kalasetu Logo">
-            </div>
-
-            <div>
-                <h1>KALASETU</h1>
-                <p>TRADITION • CRAFT • STORY</p>
-            </div>
+        <div class="logo-area">
+            <img src="images/kalasetu-logo.png" alt="Kalasetu Logo">
         </div>
 
-        <div class="header-actions">
-            <button id="wishlistBtn" title="Wishlist">♡</button>
-            <button id="cartBtn" title="Cart">🛒</button>
+        <div class="search-area">
+            <input type="text" id="searchInput" placeholder="Search crafts, products, creators...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
 
-            <button class="profile-btn" id="profileBtn">
-                👤
+        <div class="header-icons">
+
+            <!-- Notification -->
+            <button class="icon-btn" onclick="showMessage('Notifications')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+                    <path d="M10 21h4"></path>
+                </svg>
             </button>
+
+            <!-- Wishlist -->
+            <button class="icon-btn" onclick="showMessage('Wishlist')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20.8 8.6c0 5.5-8.8 10.4-8.8 10.4S3.2 14.1 3.2 8.6A4.6 4.6 0 0 1 12 6.4a4.6 4.6 0 0 1 8.8 2.2z"></path>
+                </svg>
+            </button>
+
+            <!-- Cart -->
+            <button class="icon-btn" onclick="showMessage('Cart')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 4h2l2.2 11h10.9L21 7H6"></path>
+                    <circle cx="9" cy="19" r="1.5"></circle>
+                    <circle cx="17" cy="19" r="1.5"></circle>
+                </svg>
+            </button>
+
+            <!-- Profile -->
+            <button class="icon-btn" onclick="showMessage('Profile')">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"></path>
+                </svg>
+            </button>
+
         </div>
 
     </header>
 
 
-    <!-- MAIN CONTENT -->
-    <main>
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="main-nav">
 
-        <!-- HERO -->
-        <section class="hero">
+        <a href="customer-home.html" class="active">Home</a>
 
-            <div class="hero-content">
+        <a href="#categories">Categories</a>
 
-                <p class="small-title">WELCOME TO KALASETU</p>
+        <a href="#offers">Offers</a>
 
-                <h2>
-                    Discover the Beauty<br>
-                    of <span>Handmade</span>
-                </h2>
-
-                <p class="hero-text">
-                    Explore authentic crafts, meet talented creators,
-                    and discover the stories behind every creation.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- SEARCH -->
-        <section class="search-section">
-
-            <div class="search-box">
-
-                <span class="search-icon">⌕</span>
-
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search handmade crafts..."
-                >
-
-                <button id="searchBtn">
-                    Search
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- CATEGORIES -->
-        <section class="section">
-
-            <div class="section-heading">
-
-                <div>
-                    <p class="section-label">EXPLORE</p>
-                    <h2>Craft Categories</h2>
-                </div>
-
-                <button class="view-all" id="viewCategories">
-                    View all →
-                </button>
-
-            </div>
-
-
-            <div class="categories">
-
-                <button class="category-card" data-category="Pottery">
-                    <div class="category-icon">🏺</div>
-                    <h3>Pottery</h3>
-                    <p>Clay & Earth</p>
-                </button>
-
-                <button class="category-card" data-category="Handloom">
-                    <div class="category-icon">🧶</div>
-                    <h3>Handloom</h3>
-                    <p>Threads & Weaves</p>
-                </button>
-
-                <button class="category-card" data-category="Wood Craft">
-                    <div class="category-icon">🪵</div>
-                    <h3>Wood Craft</h3>
-                    <p>Carved by Hand</p>
-                </button>
-
-                <button class="category-card" data-category="Jewelry">
-                    <div class="category-icon">💍</div>
-                    <h3>Jewelry</h3>
-                    <p>Art to Wear</p>
-                </button>
-
-                <button class="category-card" data-category="Paintings">
-                    <div class="category-icon">🎨</div>
-                    <h3>Paintings</h3>
-                    <p>Stories on Canvas</p>
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- FEATURED CRAFTS -->
-        <section class="section featured-section">
-
-            <div class="section-heading">
-
-                <div>
-                    <p class="section-label">HANDPICKED FOR YOU</p>
-                    <h2>Featured Crafts</h2>
-                </div>
-
-                <button class="view-all" id="viewFeatured">
-                    View all →
-                </button>
-
-            </div>
-
-
-            <div class="craft-grid">
-
-                <!-- CRAFT 1 -->
-                <article class="craft-card">
-
-                    <div class="craft-image">
-
-                        <img
-                            src="images/pottery.png"
-                            alt="Handmade Pottery"
-                        >
-
-                        <button class="heart-btn">
-                            ♡
-                        </button>
-
-                        <span class="craft-tag">
-                            Featured
-                        </span>
-
-                    </div>
-
-                    <div class="craft-info">
-
-                        <p class="craft-category">
-                            POTTERY
-                        </p>
-
-                        <h3>Handmade Terracotta Pot</h3>
-
-                        <p class="creator">
-                            By Local Artisan
-                        </p>
-
-                        <div class="craft-bottom">
-
-                            <span class="price">
-                                ₹850
-                            </span>
-
-                            <button class="details-btn">
-                                View →
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CRAFT 2 -->
-                <article class="craft-card">
-
-                    <div class="craft-image">
-
-                        <img
-                            src="images/handloom.png"
-                            alt="Handloom Craft"
-                        >
-
-                        <button class="heart-btn">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="craft-info">
-
-                        <p class="craft-category">
-                            HANDLOOM
-                        </p>
-
-                        <h3>Traditional Handwoven Saree</h3>
-
-                        <p class="creator">
-                            By Village Weaver
-                        </p>
-
-                        <div class="craft-bottom">
-
-                            <span class="price">
-                                ₹2,400
-                            </span>
-
-                            <button class="details-btn">
-                                View →
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CRAFT 3 -->
-                <article class="craft-card">
-
-                    <div class="craft-image">
-
-                        <img
-                            src="images/woodcraft.png"
-                            alt="Wood Craft"
-                        >
-
-                        <button class="heart-btn">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="craft-info">
-
-                        <p class="craft-category">
-                            WOOD CRAFT
-                        </p>
-
-                        <h3>Traditional Wooden Art</h3>
-
-                        <p class="creator">
-                            By Heritage Craftsman
-                        </p>
-
-                        <div class="craft-bottom">
-
-                            <span class="price">
-                                ₹1,250
-                            </span>
-
-                            <button class="details-btn">
-                                View →
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CRAFT 4 -->
-                <article class="craft-card">
-
-                    <div class="craft-image">
-
-                        <img
-                            src="images/jewelry.png"
-                            alt="Handmade Jewelry"
-                        >
-
-                        <button class="heart-btn">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="craft-info">
-
-                        <p class="craft-category">
-                            JEWELRY
-                        </p>
-
-                        <h3>Handcrafted Heritage Jewelry</h3>
-
-                        <p class="creator">
-                            By Artisan Creator
-                        </p>
-
-                        <div class="craft-bottom">
-
-                            <span class="price">
-                                ₹1,800
-                            </span>
-
-                            <button class="details-btn">
-                                View →
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- STORY BANNER -->
-        <section class="story-banner">
-
-            <div>
-
-                <p class="section-label">
-                    EVERY CRAFT HAS A STORY
-                </p>
-
-                <h2>
-                    Handmade with tradition.<br>
-                    Connected through stories.
-                </h2>
-
-                <p>
-                    Meet the people and traditions behind
-                    the crafts you love.
-                </p>
-
-                <button id="discoverBtn">
-                    Discover Stories →
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- BOTTOM NAVIGATION -->
-    <nav class="bottom-nav">
-
-        <button class="nav-item active" data-page="home">
-            <span>⌂</span>
-            <p>Home</p>
-        </button>
-
-        <button class="nav-item" data-page="discover">
-            <span>⌕</span>
-            <p>Discover</p>
-        </button>
-
-        <button class="nav-item" data-page="wishlist">
-            <span>♡</span>
-            <p>Wishlist</p>
-        </button>
-
-        <button class="nav-item" data-page="orders">
-            <span>◷</span>
-            <p>Orders</p>
-        </button>
-
-        <button class="nav-item" data-page="profile">
-            <span>◯</span>
-            <p>Profile</p>
-        </button>
+        <a href="#creator" onclick="showMessage('Chat with Creator')">
+            Chat with Creator
+        </a>
 
     </nav>
+
+
+    <!-- ================= FESTIVAL BANNER ================= -->
+    <section class="festival-section" id="offers">
+
+        <button class="festival-arrow left-arrow" onclick="previousFestival()">
+            ‹
+        </button>
+
+        <div class="festival-window">
+
+            <div class="festival-track" id="festivalTrack">
+
+                <!-- Vinayaka -->
+                <div class="festival-slide">
+                    <img
+                        src="images/vinayaka.png"
+                        alt="Vinayaka Chavithi Special"
+                    >
+
+                    <button
+                        class="festival-button"
+                        onclick="exploreFestival('Vinayaka Chavithi')">
+                    </button>
+                </div>
+
+
+                <!-- Dussehra -->
+                <div class="festival-slide">
+                    <img
+                        src="images/dussehra.png"
+                        alt="Dussehra Craft Collection"
+                    >
+
+                    <button
+                        class="festival-button"
+                        onclick="exploreFestival('Dussehra')">
+                    </button>
+                </div>
+
+
+                <!-- Diwali -->
+                <div class="festival-slide">
+                    <img
+                        src="images/diwali.png"
+                        alt="Diwali Handmade Collection"
+                    >
+
+                    <button
+                        class="festival-button"
+                        onclick="exploreFestival('Diwali')">
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="festival-arrow right-arrow" onclick="nextFestival()">
+            ›
+        </button>
+
+    </section>
+
+
+    <!-- ================= EXPLORE CRAFTS ================= -->
+    <section class="content-section" id="categories">
+
+        <div class="section-heading">
+            <h2>Explore Crafts</h2>
+            <span>Discover traditional handmade art</span>
+        </div>
+
+
+        <div class="category-row">
+
+            <!-- Pottery -->
+            <div class="category-card" onclick="openCategory('Pottery')">
+
+                <div class="category-image">
+                    <img
+                        src="images/pottery.jpg"
+                        alt="Pottery"
+                    >
+                </div>
+
+                <p>Pottery</p>
+
+            </div>
+
+
+            <!-- Textiles -->
+            <div class="category-card" onclick="openCategory('Textiles')">
+
+                <div class="category-image">
+                    <img
+                        src="images/textiles.jpg"
+                        alt="Textiles"
+                    >
+                </div>
+
+                <p>Textiles</p>
+
+            </div>
+
+
+            <!-- Woodcraft -->
+            <div class="category-card" onclick="openCategory('Woodcraft')">
+
+                <div class="category-image">
+                    <img
+                        src="images/woodcraft.jpeg"
+                        alt="Woodcraft"
+                    >
+                </div>
+
+                <p>Woodcraft</p>
+
+            </div>
+
+
+            <!-- Jewellery -->
+            <div class="category-card" onclick="openCategory('Jewellery')">
+
+                <div class="category-image">
+                    <img
+                        src="images/jewellery.jpg"
+                        alt="Jewellery"
+                    >
+                </div>
+
+                <p>Jewellery</p>
+
+            </div>
+
+
+            <!-- Baskets -->
+            <div class="category-card" onclick="openCategory('Baskets')">
+
+                <div class="category-image">
+                    <img
+                        src="images/baskets.jpg"
+                        alt="Baskets"
+                    >
+                </div>
+
+                <p>Baskets</p>
+
+            </div>
+
+
+            <!-- Home Decor -->
+            <div class="category-card" onclick="openCategory('Home Decor')">
+
+                <div class="category-image">
+                    <img
+                        src="images/home-decor.jpg"
+                        alt="Home Decor"
+                    >
+                </div>
+
+                <p>Home Decor</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURED CRAFTS ================= -->
+    <section class="content-section featured-section">
+
+        <div class="section-heading">
+            <h2>Featured Crafts</h2>
+            <span>Handpicked creations from our artisans</span>
+        </div>
+
+
+        <div class="featured-row">
+
+            <!-- Product 1 -->
+            <div class="product-card" onclick="openProduct('Terracotta Handcrafted Pot')">
+
+                <div class="product-image">
+                    <img
+                        src="images/featured-pottery.jpg"
+                        alt="Terracotta Handcrafted Pot"
+                    >
+                </div>
+
+                <div class="product-info">
+                    <h3>Terracotta Handcrafted Pot</h3>
+                    <p>Traditional Pottery</p>
+                    <span class="price">₹499</span>
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+            <div class="product-card" onclick="openProduct('Handloom Cotton Saree')">
+
+                <div class="product-image">
+                    <img
+                        src="images/featured-textiles.jpg"
+                        alt="Handloom Cotton Saree"
+                    >
+                </div>
+
+                <div class="product-info">
+                    <h3>Handloom Cotton Saree</h3>
+                    <p>Traditional Textiles</p>
+                    <span class="price">₹1,299</span>
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+            <div class="product-card" onclick="openProduct('Wooden Elephant Figurine')">
+
+                <div class="product-image">
+                    <img
+                        src="images/featured-woodcraft.jpeg"
+                        alt="Wooden Elephant Figurine"
+                    >
+                </div>
+
+                <div class="product-info">
+                    <h3>Wooden Elephant Figurine</h3>
+                    <p>Woodcraft</p>
+                    <span class="price">₹699</span>
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+            <div class="product-card" onclick="openProduct('Oxidised Silver Earrings')">
+
+                <div class="product-image">
+                    <img
+                        src="images/featured-jewellery.jpg"
+                        alt="Oxidised Silver Earrings"
+                    >
+                </div>
+
+                <div class="product-info">
+                    <h3>Oxidised Silver Earrings</h3>
+                    <p>Handmade Jewellery</p>
+                    <span class="price">₹349</span>
+                </div>
+
+            </div>
+
+
+            <!-- Product 5 -->
+            <div class="product-card" onclick="openProduct('Hand Painted Tea Set')">
+
+                <div class="product-image">
+                    <img
+                        src="images/featured-teaset.jpg"
+                        alt="Hand Painted Tea Set"
+                    >
+                </div>
+
+                <div class="product-info">
+                    <h3>Hand Painted Tea Set</h3>
+                    <p>Handmade Ceramic</p>
+                    <span class="price">₹899</span>
+                </div>
+
+            </div>
+
+
+            <!-- Product 6 -->
+            <div class="product-card" onclick="openProduct('Palm Leaf Basket')">
+
+                <div class="product-image">
+                    <img
+                        src="images/featured-basket.jpg"
+                        alt="Palm Leaf Basket"
+                    >
+                </div>
+
+                <div class="product-info">
+                    <h3>Palm Leaf Basket</h3>
+                    <p>Natural Craft</p>
+                    <span class="price">₹399</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/kalasetu-logo.png"
+                    alt="Kalasetu Logo"
+                >
+
+                <p>
+                    Connecting customers with India's talented
+                    artisans and traditional handmade crafts.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Kalasetu</h3>
+
+                <a href="#">About Us</a>
+                <a href="#">Our Artisans</a>
+                <a href="#">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Customer</h3>
+
+                <a href="#">My Orders</a>
+                <a href="#">Wishlist</a>
+                <a href="#">Help & Support</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            © 2026 Kalasetu. Preserving tradition, empowering artisans.
+        </div>
+
+    </footer>
 
 
     <script src="customer-home.js"></script>
