@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  // ================= FESTIVAL SLIDER =================
 
 const slides = document.querySelectorAll(".festival-slide");
@@ -25,12 +26,122 @@ function showSlide(index) {
     slides.forEach((slide) => {
         slide.classList.remove("active");
     });
+=======
+ /* ================= FESTIVAL CAROUSEL ================= */
+
+let currentFestival = 0;
+
+const festivalTrack = document.getElementById("festivalTrack");
+
+const totalFestivals = 3;
+
+
+function showFestival(index) {
+
+    if (index < 0) {
+        currentFestival = totalFestivals - 1;
+    }
+
+    else if (index >= totalFestivals) {
+        currentFestival = 0;
+    }
+
+    else {
+        currentFestival = index;
+    }
+
+    festivalTrack.style.transform =
+        `translateX(-${currentFestival * 100}%)`;
+}
+
+
+function nextFestival() {
+    showFestival(currentFestival + 1);
+}
+
+
+function previousFestival() {
+    showFestival(currentFestival - 1);
+}
+
+
+/* Automatic carousel */
+
+setInterval(function () {
+    nextFestival();
+}, 5000);
+
+
+/* ================= FESTIVAL BUTTON ================= */
+
+function exploreFestival(festivalName) {
+
+    alert(
+        festivalName +
+        " collection will be available here."
+    );
+}
+
+
+/* ================= CATEGORY ================= */
+
+function openCategory(categoryName) {
+
+    alert(
+        categoryName +
+        " category selected."
+    );
+}
+
+
+/* ================= PRODUCT ================= */
+
+function openProduct(productName) {
+
+    alert(
+        productName +
+        " selected."
+    );
+}
+
+
+/* ================= HEADER ICONS ================= */
+
+function showMessage(item) {
+
+    alert(item + " feature will be added soon.");
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchProducts() {
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const value =
+        searchInput.value.trim();
+
+    if (value === "") {
+
+        alert("Please enter something to search.");
+
+        return;
+    }
+
+    alert(
+        "Searching for: " + value
+    );
+}
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
 
     // Remove active from all dots
     dots.forEach((dot) => {
         dot.classList.remove("active");
     });
 
+<<<<<<< HEAD
     // Add active to current slide
     slides[currentSlide].classList.add("active");
 
@@ -39,8 +150,19 @@ function showSlide(index) {
         dots[currentSlide].classList.add("active");
     }
 }
+=======
+/* ================= ENTER KEY SEARCH ================= */
 
+document
+    .getElementById("searchInput")
+    .addEventListener("keydown", function (event) {
 
+        if (event.key === "Enter") {
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
+
+            searchProducts();
+
+<<<<<<< HEAD
 // Next slide
 function nextSlide() {
     showSlide(currentSlide + 1);
@@ -98,3 +220,8 @@ dots.forEach((dot, index) => {
 // Start slider
 showSlide(0);
 startTimer();
+=======
+        }
+
+    });
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91

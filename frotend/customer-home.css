@@ -1,11 +1,17 @@
+<<<<<<< HEAD
  /* =========================================
    RESET
    ========================================= */
 
 * {
+=======
+ /* ================= GENERAL ================= */
+
+* {
+    box-sizing: border-box;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 
@@ -15,8 +21,8 @@
    ========================================= */
 
 body {
-    background: #F6EBDD;
-    color: #33231E;
+    background: #f8f1e5;
+    color: #4e372d;
     font-family: Arial, sans-serif;
 
     padding-bottom: 75px;
@@ -24,6 +30,7 @@ body {
     overflow-x: hidden;
 }
 
+<<<<<<< HEAD
 
 
 /* =========================================
@@ -275,12 +282,27 @@ body {
     font-size: 22px;
 
     cursor: pointer;
+=======
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+.top-header {
+    width: 100%;
+    height: 78px;
+    background: #fffaf0;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
+<<<<<<< HEAD
     z-index: 20;
 
     transition: 0.25s;
@@ -390,9 +412,22 @@ body {
 
     border-radius: 40px;
 
+=======
+    padding: 10px 45px;
+
+    border-bottom: 1px solid #e5d7c3;
+
+    gap: 30px;
+}
+
+
+.logo-area {
+    width: 190px;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
     display: flex;
 
     align-items: center;
+<<<<<<< HEAD
 
     padding: 6px 8px 6px 20px;
 
@@ -453,11 +488,291 @@ body {
 
     padding: 40px 8%;
 
+=======
+}
+
+.logo-area img {
+    width: 165px;
+    height: auto;
+    display: block;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-area {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    max-width: 620px;
+
+    margin-left: 10px;
+}
+
+.search-area input {
+    width: 100%;
+    height: 40px;
+
+    border: 1px solid #d7c2a6;
+    border-right: none;
+
+    border-radius: 22px 0 0 22px;
+
+    background: #fffdf8;
+
+    padding: 0 17px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.search-area input:focus {
+    border-color: #a96342;
+}
+
+.search-area button {
+    height: 40px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 0 22px 22px 0;
+
+    background: #8f5139;
+    color: white;
+
+    cursor: pointer;
+}
+
+.search-area button:hover {
+    background: #73402e;
+}
+
+
+/* ================= HEADER ICONS ================= */
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-left: auto;
+}
+
+.icon-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.icon-btn svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: #563c31;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon-btn:hover svg {
+    stroke: #9b573c;
+}
+
+
+/* ================= NAV ================= */
+
+.main-nav {
+    height: 48px;
+
+    background: #fffaf0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 55px;
+
+    border-bottom: 1px solid #e4d7c4;
+}
+
+.main-nav a {
+    text-decoration: none;
+
+    color: #5a4034;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 15px 0;
+
+    position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #98553b;
+}
+
+.main-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 5px;
+
+    height: 2px;
+
+    background: #98553b;
+}
+
+
+/* ================= FESTIVAL BANNER ================= */
+
+.festival-section {
+    width: calc(100% - 150px);
+
+    max-width: 1160px;
+
+    margin: 22px auto 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.festival-window {
+    width: 100%;
+    overflow: hidden;
+
+    border-radius: 16px;
+}
+
+.festival-track {
+    width: 100%;
+
+    display: flex;
+
+    transition: transform 0.5s ease;
+}
+
+.festival-slide {
+    width: 100%;
+
+    min-width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.festival-slide img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* Transparent clickable area over CTA */
+
+.festival-button {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15%;
+
+    transform: translateX(-50%);
+
+    width: 150px;
+    height: 42px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* Banner arrows */
+
+.festival-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 250, 240, 0.88);
+
+    color: #714533;
+
+    font-size: 30px;
+    line-height: 30px;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(70, 40, 20, 0.12);
+}
+
+.festival-arrow:hover {
+    background: #fffaf0;
+}
+
+.left-arrow {
+    left: 12px;
+}
+
+.right-arrow {
+    right: 12px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.content-section {
+    width: calc(100% - 90px);
+
+    max-width: 1260px;
+
+    margin: 0 auto 35px;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
 }
 
 
 
 .section-heading {
+<<<<<<< HEAD
 
     display: flex;
 
@@ -481,6 +796,9 @@ body {
     font-weight: bold;
 
     margin-bottom: 5px;
+=======
+    margin-bottom: 17px;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
 }
 
 
@@ -489,6 +807,7 @@ body {
 
     font-family: Georgia, serif;
 
+<<<<<<< HEAD
     font-size: 30px;
 
     color: #5A3528;
@@ -576,11 +895,120 @@ body {
     font-size: 17px;
 
     color: #5A3528;
+=======
+    font-size: 24px;
+
+    color: #55382c;
+
+    margin-bottom: 4px;
+}
+
+.section-heading span {
+    font-size: 12px;
+
+    color: #876e5e;
+}
+
+
+/* ================= EXPLORE CRAFTS ================= */
+
+.category-row {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    padding: 5px 8px 12px;
+
+    scrollbar-width: none;
+}
+
+.category-row::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*
+    OUTER BORDER / BOX:
+    This is intentionally a little bigger.
+*/
+
+.category-card {
+    width: 135px;
+
+    min-width: 135px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+/*
+    Bigger circular border.
+    Image automatically stays inside this border.
+*/
+
+.category-image {
+    width: 108px;
+    height: 108px;
+
+    margin: 0 auto 9px;
+
+    border-radius: 50%;
+
+    border: 3px solid #d9b992;
+
+    background: #ead8c0;
+
+    padding: 3px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 2px 6px rgba(85, 55, 40, 0.08);
+}
+
+
+/*
+    Image automatically fits the complete border area.
+*/
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.category-card:hover .category-image {
+    border-color: #a96546;
+
+    transform: translateY(-2px);
+
+    transition: 0.2s ease;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
 }
 
 
 
 .category-card p {
+<<<<<<< HEAD
 
     font-size: 11px;
 
@@ -680,9 +1108,71 @@ body {
 
     font-size: 20px;
 
-    cursor: pointer;
+=======
+    margin: 0;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #4e372d;
 }
 
+
+/* ================= FEATURED CRAFTS ================= */
+
+.featured-section {
+    margin-top: 5px;
+}
+
+.featured-row {
+    width: 100%;
+
+    display: flex;
+
+    gap: 16px;
+
+    overflow-x: auto;
+
+    padding: 4px 6px 12px;
+
+    scrollbar-width: none;
+}
+
+.featured-row::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*
+    PRODUCT OUTER BOX:
+    Slightly bigger border/card.
+*/
+
+.product-card {
+    width: 198px;
+
+    min-width: 198px;
+
+    background: #fffaf0;
+
+    border: 2px solid #e0cdb2;
+
+    border-radius: 10px;
+
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 7px rgba(80, 50, 30, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+<<<<<<< HEAD
 
 
 .heart-btn.active {
@@ -761,18 +1251,91 @@ body {
 
 .craft-bottom {
 
+=======
+
+/*
+    Bigger image box.
+*/
+
+.product-image {
+    width: 100%;
+
+    height: 120px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #e8d5ba;
+
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
     display: flex;
 
     align-items: center;
+<<<<<<< HEAD
 
     justify-content: space-between;
 
     margin-top: 15px;
+=======
+    justify-content: center;
+}
+
+
+/*
+    Image automatically occupies ONLY
+    the product image box.
+*/
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 7px 15px rgba(75, 45, 25, 0.13);
+
+    border-color: #bd9270;
+}
+
+
+/* ================= PRODUCT DETAILS ================= */
+
+.product-info {
+    padding: 11px 12px 13px;
+}
+
+.product-info h3 {
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    color: #4e372d;
+
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    font-size: 11px;
+
+    color: #907564;
+
+    margin-bottom: 8px;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
 }
 
 
 
 .price {
+<<<<<<< HEAD
 
     font-size: 18px;
 
@@ -813,9 +1376,24 @@ body {
     margin: 20px 8% 100px;
 
     padding: 45px;
+=======
+    font-size: 14px;
 
-    border-radius: 24px;
+    font-weight: bold;
 
+    color: #8e4e35;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    margin-top: 45px;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
+
+    background: #4f372d;
+
+<<<<<<< HEAD
     background:
         linear-gradient(
             rgba(90,53,40,0.76),
@@ -905,10 +1483,28 @@ body {
     justify-content: center;
 
     gap: 55px;
-
-    z-index: 200;
+=======
+    color: #f8ecdc;
 }
 
+.footer-content {
+    width: calc(100% - 90px);
+
+    max-width: 1260px;
+
+    margin: auto;
+
+    padding: 35px 0;
+
+    display: flex;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
+
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+<<<<<<< HEAD
 
 
 .nav-item {
@@ -952,9 +1548,80 @@ body {
 /* =========================================
    TABLET
    ========================================= */
+=======
+.footer-brand {
+    max-width: 360px;
+}
 
-@media (max-width: 1000px) {
+.footer-brand img {
+    width: 145px;
 
+    background: #fffaf0;
+
+    padding: 5px;
+
+    border-radius: 5px;
+
+    margin-bottom: 13px;
+}
+
+.footer-brand p {
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #eadbca;
+}
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.footer-column h3 {
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+
+    color: #fff4e6;
+}
+
+.footer-column a {
+    color: #e5d5c4;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    padding: 15px;
+
+    font-size: 11px;
+
+    color: #d9c7b4;
+}
+
+
+/* ================= RESPONSIVE ================= */
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
+
+@media (max-width: 900px) {
+
+<<<<<<< HEAD
     .festival-slider {
 
         height: 300px;
@@ -967,6 +1634,32 @@ body {
         grid-template-columns:
             repeat(3, 1fr);
 
+=======
+    .top-header {
+        padding: 10px 20px;
+
+        gap: 15px;
+    }
+
+    .logo-area {
+        width: 140px;
+    }
+
+    .logo-area img {
+        width: 130px;
+    }
+
+    .main-nav {
+        gap: 25px;
+    }
+
+    .festival-section {
+        width: calc(100% - 70px);
+    }
+
+    .content-section {
+        width: calc(100% - 50px);
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
     }
 
 
@@ -980,6 +1673,7 @@ body {
 }
 
 
+<<<<<<< HEAD
 
 /* =========================================
    MOBILE
@@ -1217,6 +1911,76 @@ body {
 
         justify-content: space-around;
 
+=======
+@media (max-width: 650px) {
+
+    .top-header {
+        height: auto;
+
+        flex-wrap: wrap;
+
+        padding: 12px 15px;
+    }
+
+    .logo-area {
+        width: auto;
+    }
+
+    .search-area {
+        order: 3;
+
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+    }
+
+    .header-icons {
+        gap: 5px;
+    }
+
+    .main-nav {
+        gap: 18px;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding: 0 15px;
+    }
+
+    .main-nav a {
+        white-space: nowrap;
+    }
+
+    .festival-section {
+        width: calc(100% - 30px);
+
+        margin-top: 15px;
+    }
+
+    .festival-arrow {
+        width: 32px;
+        height: 32px;
+
+        font-size: 25px;
+    }
+
+    .content-section {
+        width: calc(100% - 30px);
+    }
+
+    .category-row {
+        justify-content: flex-start;
+    }
+
+    .footer-content {
+        width: calc(100% - 30px);
+
+        flex-direction: column;
+
+        gap: 25px;
+>>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
     }
 
 }
