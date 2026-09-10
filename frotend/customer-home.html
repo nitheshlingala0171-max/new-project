@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,63 +11,145 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ================= HEADER ================= -->
+
     <header class="header">
 
         <div class="brand">
+
             <div class="logo-circle">
                 <img src="images/kalasetu-logo.png" alt="Kalasetu Logo">
             </div>
 
-            <div>
+            <div class="brand-text">
                 <h1>KALASETU</h1>
                 <p>TRADITION • CRAFT • STORY</p>
             </div>
+
         </div>
 
+
         <div class="header-actions">
-            <button id="wishlistBtn" title="Wishlist">♡</button>
-            <button id="cartBtn" title="Cart">🛒</button>
+
+            <button id="wishlistBtn" title="Wishlist">
+                ♡
+            </button>
+
+            <button id="cartBtn" title="Cart">
+                🛒
+            </button>
 
             <button class="profile-btn" id="profileBtn">
                 👤
             </button>
+
         </div>
 
     </header>
 
 
-    <!-- MAIN CONTENT -->
+    <!-- ================= MAIN ================= -->
+
     <main>
 
-        <!-- HERO -->
-        <section class="hero">
 
-            <div class="hero-content">
+        <!-- ================= FESTIVAL SLIDER ================= -->
 
-                <p class="small-title">WELCOME TO KALASETU</p>
+        <section class="festival-slider">
 
-                <h2>
-                    Discover the Beauty<br>
-                    of <span>Handmade</span>
-                </h2>
+            <div class="festival-slides">
 
-                <p class="hero-text">
-                    Explore authentic crafts, meet talented creators,
-                    and discover the stories behind every creation.
-                </p>
+
+                <!-- SLIDE 1 -->
+
+                <div class="festival-slide active">
+
+                    <img
+                        src="images/festival-diwali.png"
+                        alt="Diwali Special Handmade Collection"
+                    >
+
+                </div>
+
+
+                <!-- SLIDE 2 -->
+
+                <div class="festival-slide">
+
+                    <img
+                        src="images/festival-vinayaka.png"
+                        alt="Vinayaka Chavithi Traditional Ganesh Crafts"
+                    >
+
+                </div>
+
+
+                <!-- SLIDE 3 -->
+
+                <div class="festival-slide">
+
+                    <img
+                        src="images/festival-dussehra.png"
+                        alt="Dussehra Special Craft Collection"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PREVIOUS -->
+
+            <button
+                class="festival-prev"
+                id="festivalPrev">
+                ❮
+            </button>
+
+
+            <!-- NEXT -->
+
+            <button
+                class="festival-next"
+                id="festivalNext">
+                ❯
+            </button>
+
+
+            <!-- DOTS -->
+
+            <div class="festival-dots">
+
+                <button
+                    class="festival-dot active"
+                    data-slide="0">
+                </button>
+
+                <button
+                    class="festival-dot"
+                    data-slide="1">
+                </button>
+
+                <button
+                    class="festival-dot"
+                    data-slide="2">
+                </button>
 
             </div>
 
         </section>
 
 
-        <!-- SEARCH -->
+
+        <!-- ================= SEARCH ================= -->
+
         <section class="search-section">
 
             <div class="search-box">
 
-                <span class="search-icon">⌕</span>
+                <span class="search-icon">
+                    ⌕
+                </span>
 
                 <input
                     type="text"
@@ -83,17 +166,26 @@
         </section>
 
 
-        <!-- CATEGORIES -->
+
+        <!-- ================= CATEGORIES ================= -->
+
         <section class="section">
 
             <div class="section-heading">
 
                 <div>
-                    <p class="section-label">EXPLORE</p>
-                    <h2>Craft Categories</h2>
+
+                    <p class="section-label">
+                        EXPLORE
+                    </p>
+
+                    <h2>
+                        Craft Categories
+                    </h2>
+
                 </div>
 
-                <button class="view-all" id="viewCategories">
+                <button class="view-all">
                     View all →
                 </button>
 
@@ -102,34 +194,89 @@
 
             <div class="categories">
 
-                <button class="category-card" data-category="Pottery">
-                    <div class="category-icon">🏺</div>
-                    <h3>Pottery</h3>
-                    <p>Clay & Earth</p>
+
+                <button class="category-card">
+
+                    <div class="category-icon">
+                        🏺
+                    </div>
+
+                    <h3>
+                        Pottery
+                    </h3>
+
+                    <p>
+                        Clay & Earth
+                    </p>
+
                 </button>
 
-                <button class="category-card" data-category="Handloom">
-                    <div class="category-icon">🧶</div>
-                    <h3>Handloom</h3>
-                    <p>Threads & Weaves</p>
+
+                <button class="category-card">
+
+                    <div class="category-icon">
+                        🧶
+                    </div>
+
+                    <h3>
+                        Handloom
+                    </h3>
+
+                    <p>
+                        Threads & Weaves
+                    </p>
+
                 </button>
 
-                <button class="category-card" data-category="Wood Craft">
-                    <div class="category-icon">🪵</div>
-                    <h3>Wood Craft</h3>
-                    <p>Carved by Hand</p>
+
+                <button class="category-card">
+
+                    <div class="category-icon">
+                        🪵
+                    </div>
+
+                    <h3>
+                        Wood Craft
+                    </h3>
+
+                    <p>
+                        Carved by Hand
+                    </p>
+
                 </button>
 
-                <button class="category-card" data-category="Jewelry">
-                    <div class="category-icon">💍</div>
-                    <h3>Jewelry</h3>
-                    <p>Art to Wear</p>
+
+                <button class="category-card">
+
+                    <div class="category-icon">
+                        💍
+                    </div>
+
+                    <h3>
+                        Jewelry
+                    </h3>
+
+                    <p>
+                        Art to Wear
+                    </p>
+
                 </button>
 
-                <button class="category-card" data-category="Paintings">
-                    <div class="category-icon">🎨</div>
-                    <h3>Paintings</h3>
-                    <p>Stories on Canvas</p>
+
+                <button class="category-card">
+
+                    <div class="category-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Paintings
+                    </h3>
+
+                    <p>
+                        Stories on Canvas
+                    </p>
+
                 </button>
 
             </div>
@@ -137,17 +284,26 @@
         </section>
 
 
-        <!-- FEATURED CRAFTS -->
-        <section class="section featured-section">
+
+        <!-- ================= FEATURED CRAFTS ================= -->
+
+        <section class="section">
 
             <div class="section-heading">
 
                 <div>
-                    <p class="section-label">HANDPICKED FOR YOU</p>
-                    <h2>Featured Crafts</h2>
+
+                    <p class="section-label">
+                        HANDPICKED FOR YOU
+                    </p>
+
+                    <h2>
+                        Featured Crafts
+                    </h2>
+
                 </div>
 
-                <button class="view-all" id="viewFeatured">
+                <button class="view-all">
                     View all →
                 </button>
 
@@ -156,7 +312,9 @@
 
             <div class="craft-grid">
 
+
                 <!-- CRAFT 1 -->
+
                 <article class="craft-card">
 
                     <div class="craft-image">
@@ -176,17 +334,21 @@
 
                     </div>
 
+
                     <div class="craft-info">
 
                         <p class="craft-category">
                             POTTERY
                         </p>
 
-                        <h3>Handmade Terracotta Pot</h3>
+                        <h3>
+                            Handmade Terracotta Pot
+                        </h3>
 
                         <p class="creator">
                             By Local Artisan
                         </p>
+
 
                         <div class="craft-bottom">
 
@@ -205,7 +367,9 @@
                 </article>
 
 
+
                 <!-- CRAFT 2 -->
+
                 <article class="craft-card">
 
                     <div class="craft-image">
@@ -221,17 +385,21 @@
 
                     </div>
 
+
                     <div class="craft-info">
 
                         <p class="craft-category">
                             HANDLOOM
                         </p>
 
-                        <h3>Traditional Handwoven Saree</h3>
+                        <h3>
+                            Traditional Handwoven Saree
+                        </h3>
 
                         <p class="creator">
                             By Village Weaver
                         </p>
+
 
                         <div class="craft-bottom">
 
@@ -250,7 +418,9 @@
                 </article>
 
 
+
                 <!-- CRAFT 3 -->
+
                 <article class="craft-card">
 
                     <div class="craft-image">
@@ -266,17 +436,21 @@
 
                     </div>
 
+
                     <div class="craft-info">
 
                         <p class="craft-category">
                             WOOD CRAFT
                         </p>
 
-                        <h3>Traditional Wooden Art</h3>
+                        <h3>
+                            Traditional Wooden Art
+                        </h3>
 
                         <p class="creator">
                             By Heritage Craftsman
                         </p>
+
 
                         <div class="craft-bottom">
 
@@ -295,7 +469,9 @@
                 </article>
 
 
+
                 <!-- CRAFT 4 -->
+
                 <article class="craft-card">
 
                     <div class="craft-image">
@@ -311,17 +487,21 @@
 
                     </div>
 
+
                     <div class="craft-info">
 
                         <p class="craft-category">
                             JEWELRY
                         </p>
 
-                        <h3>Handcrafted Heritage Jewelry</h3>
+                        <h3>
+                            Handcrafted Heritage Jewelry
+                        </h3>
 
                         <p class="creator">
                             By Artisan Creator
                         </p>
+
 
                         <div class="craft-bottom">
 
@@ -344,60 +524,60 @@
         </section>
 
 
-        <!-- STORY BANNER -->
+
+        <!-- ================= STORY ================= -->
+
         <section class="story-banner">
 
-            <div>
+            <p class="section-label">
+                EVERY CRAFT HAS A STORY
+            </p>
 
-                <p class="section-label">
-                    EVERY CRAFT HAS A STORY
-                </p>
+            <h2>
+                Handmade with tradition.<br>
+                Connected through stories.
+            </h2>
 
-                <h2>
-                    Handmade with tradition.<br>
-                    Connected through stories.
-                </h2>
+            <p>
+                Meet the people and traditions behind
+                the crafts you love.
+            </p>
 
-                <p>
-                    Meet the people and traditions behind
-                    the crafts you love.
-                </p>
-
-                <button id="discoverBtn">
-                    Discover Stories →
-                </button>
-
-            </div>
+            <button>
+                Discover Stories →
+            </button>
 
         </section>
 
     </main>
 
 
-    <!-- BOTTOM NAVIGATION -->
+
+    <!-- ================= BOTTOM NAV ================= -->
+
     <nav class="bottom-nav">
 
-        <button class="nav-item active" data-page="home">
+        <button class="nav-item active">
             <span>⌂</span>
             <p>Home</p>
         </button>
 
-        <button class="nav-item" data-page="discover">
+        <button class="nav-item">
             <span>⌕</span>
             <p>Discover</p>
         </button>
 
-        <button class="nav-item" data-page="wishlist">
+        <button class="nav-item">
             <span>♡</span>
             <p>Wishlist</p>
         </button>
 
-        <button class="nav-item" data-page="orders">
+        <button class="nav-item">
             <span>◷</span>
             <p>Orders</p>
         </button>
 
-        <button class="nav-item" data-page="profile">
+        <button class="nav-item">
             <span>◯</span>
             <p>Profile</p>
         </button>
@@ -405,7 +585,158 @@
     </nav>
 
 
-    <script src="customer-home.js"></script>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const slides =
+            document.querySelectorAll(".festival-slide");
+
+        const dots =
+            document.querySelectorAll(".festival-dot");
+
+        const nextBtn =
+            document.getElementById("festivalNext");
+
+        const prevBtn =
+            document.getElementById("festivalPrev");
+
+        let currentSlide = 0;
+
+        let timer;
+
+
+
+        function showSlide(index) {
+
+            if (index >= slides.length) {
+                index = 0;
+            }
+
+            if (index < 0) {
+                index = slides.length - 1;
+            }
+
+            currentSlide = index;
+
+
+            slides.forEach(function(slide) {
+
+                slide.classList.remove("active");
+
+            });
+
+
+            dots.forEach(function(dot) {
+
+                dot.classList.remove("active");
+
+            });
+
+
+            slides[currentSlide]
+                .classList.add("active");
+
+
+            dots[currentSlide]
+                .classList.add("active");
+
+        }
+
+
+
+        function startSlider() {
+
+            clearInterval(timer);
+
+            timer = setInterval(function() {
+
+                showSlide(currentSlide + 1);
+
+            }, 4000);
+
+        }
+
+
+
+        nextBtn.addEventListener("click", function() {
+
+            showSlide(currentSlide + 1);
+
+            startSlider();
+
+        });
+
+
+
+        prevBtn.addEventListener("click", function() {
+
+            showSlide(currentSlide - 1);
+
+            startSlider();
+
+        });
+
+
+
+        dots.forEach(function(dot, index) {
+
+            dot.addEventListener("click", function() {
+
+                showSlide(index);
+
+                startSlider();
+
+            });
+
+        });
+
+
+
+        showSlide(0);
+
+        startSlider();
+
+
+
+        /* HEART BUTTON */
+
+        document.querySelectorAll(".heart-btn")
+            .forEach(function(button) {
+
+                button.addEventListener("click", function() {
+
+                    button.classList.toggle("active");
+
+                });
+
+            });
+
+
+
+        /* NAVIGATION */
+
+        document.querySelectorAll(".nav-item")
+            .forEach(function(item) {
+
+                item.addEventListener("click", function() {
+
+                    document.querySelectorAll(".nav-item")
+                        .forEach(function(nav) {
+
+                            nav.classList.remove("active");
+
+                        });
+
+                    item.classList.add("active");
+
+                });
+
+            });
+
+    </script>
 
 </body>
+
 </html>

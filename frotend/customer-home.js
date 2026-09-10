@@ -1,171 +1,100 @@
-// ================= SEARCH =================
+ // ================= FESTIVAL SLIDER =================
 
-const searchInput = document.getElementById("searchInput");
-const searchBtn = document.getElementById("searchBtn");
+const slides = document.querySelectorAll(".festival-slide");
+const dots = document.querySelectorAll(".festival-dot");
 
-searchBtn.addEventListener("click", function () {
+const prevBtn = document.getElementById("festivalPrev");
+const nextBtn = document.getElementById("festivalNext");
 
-    const searchText = searchInput.value.trim();
+let currentSlide = 0;
+let slideTimer;
 
-    if (searchText === "") {
-        alert("Please enter what you are looking for.");
-        return;
+
+// Show selected slide
+function showSlide(index) {
+
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
     }
 
-    alert("Searching for: " + searchText);
-});
+    // Remove active from all slides
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
+    });
 
+    // Remove active from all dots
+    dots.forEach((dot) => {
+        dot.classList.remove("active");
+    });
 
-// Press Enter to search
-searchInput.addEventListener("keydown", function (event) {
+    // Add active to current slide
+    slides[currentSlide].classList.add("active");
 
-    if (event.key === "Enter") {
-        searchBtn.click();
+    // Add active to current dot
+    if (dots[currentSlide]) {
+        dots[currentSlide].classList.add("active");
     }
-
-});
-
-
-// ================= WISHLIST =================
-
-const heartButtons = document.querySelectorAll(".heart-btn");
-
-heartButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        this.classList.toggle("active");
-
-        if (this.classList.contains("active")) {
-            this.textContent = "♥";
-        } else {
-            this.textContent = "♡";
-        }
-
-    });
-
-});
+}
 
 
-// ================= CATEGORIES =================
-
-const categoryCards = document.querySelectorAll(".category-card");
-
-categoryCards.forEach(function (card) {
-
-    card.addEventListener("click", function () {
-
-        const category = this.dataset.category;
-
-        alert("You selected: " + category);
-
-    });
-
-});
+// Next slide
+function nextSlide() {
+    showSlide(currentSlide + 1);
+    restartTimer();
+}
 
 
-// ================= VIEW ALL CATEGORIES =================
-
-document.getElementById("viewCategories").addEventListener("click", function () {
-
-    alert("All craft categories will be available here.");
-
-});
+// Previous slide
+function previousSlide() {
+    showSlide(currentSlide - 1);
+    restartTimer();
+}
 
 
-// ================= VIEW FEATURED =================
+// Start automatic slider
+function startTimer() {
+    slideTimer = setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 4000);
+}
 
-document.getElementById("viewFeatured").addEventListener("click", function () {
 
-    alert("More featured crafts will be available here.");
+// Restart timer after manual click
+function restartTimer() {
+    clearInterval(slideTimer);
+    startTimer();
+}
 
-});
+
+// Next button
+if (nextBtn) {
+    nextBtn.addEventListener("click", nextSlide);
+}
 
 
-// ================= CRAFT DETAILS =================
+// Previous button
+if (prevBtn) {
+    prevBtn.addEventListener("click", previousSlide);
+}
 
-const detailButtons = document.querySelectorAll(".details-btn");
 
-detailButtons.forEach(function (button) {
+// Dot buttons
+dots.forEach((dot, index) => {
 
-    button.addEventListener("click", function () {
+    dot.addEventListener("click", () => {
 
-        alert("Craft details page will open here.");
+        showSlide(index);
+        restartTimer();
 
     });
 
 });
 
 
-// ================= DISCOVER =================
-
-document.getElementById("discoverBtn").addEventListener("click", function () {
-
-    alert("Discover page will be created next.");
-
-});
-
-
-// ================= HEADER WISHLIST =================
-
-document.getElementById("wishlistBtn").addEventListener("click", function () {
-
-    alert("Wishlist page will be created next.");
-
-});
-
-
-// ================= CART =================
-
-document.getElementById("cartBtn").addEventListener("click", function () {
-
-    alert("Cart page will be created later.");
-
-});
-
-
-// ================= PROFILE =================
-
-document.getElementById("profileBtn").addEventListener("click", function () {
-
-    alert("Customer profile will be created later.");
-
-});
-
-
-// ================= BOTTOM NAVIGATION =================
-
-const navItems = document.querySelectorAll(".nav-item");
-
-navItems.forEach(function (item) {
-
-    item.addEventListener("click", function () {
-
-        const page = this.dataset.page;
-
-        if (page === "home") {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
-
-        else if (page === "discover") {
-            alert("Discover page will be created next.");
-        }
-
-        else if (page === "wishlist") {
-            alert("Wishlist page will be created later.");
-        }
-
-        else if (page === "orders") {
-            alert("Orders page will be created later.");
-        }
-
-        else if (page === "profile") {
-            alert("Profile page will be created later.");
-        }
-
-    });
-
-});
+// Start slider
+showSlide(0);
+startTimer();
