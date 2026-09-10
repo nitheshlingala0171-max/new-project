@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalasetu - Craft Details</title>
+
+    <link rel="stylesheet" href="craft-details.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="logo-area">
+            <img src="images/kalasetu-logo.png" alt="Kalasetu Logo">
+        </div>
+
+        <div class="search-area">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search crafts, products, creators..."
+            >
+
+            <button onclick="searchProducts()">
+                Search
+            </button>
+
+        </div>
+
+        <div class="header-icons">
+
+            <!-- Notification -->
+            <button class="icon-btn" onclick="showMessage('Notifications')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+                    <path d="M10 21h4"></path>
+                </svg>
+            </button>
+
+            <!-- Wishlist -->
+            <button class="icon-btn" onclick="showMessage('Wishlist')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20.8 8.6c0 5.5-8.8 10.4-8.8 10.4S3.2 14.1 3.2 8.6A4.6 4.6 0 0 1 12 6.4a4.6 4.6 0 0 1 8.8 2.2z"></path>
+                </svg>
+            </button>
+
+            <!-- Cart -->
+            <button class="icon-btn" onclick="showMessage('Cart')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 4h2l2.2 11h10.9L21 7H6"></path>
+                    <circle cx="9" cy="19" r="1.5"></circle>
+                    <circle cx="17" cy="19" r="1.5"></circle>
+                </svg>
+            </button>
+
+            <!-- Profile -->
+            <button class="icon-btn" onclick="showMessage('Profile')">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"></path>
+                </svg>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="main-nav">
+
+        <a href="customer-home.html">
+            Home
+        </a>
+
+        <a href="customer-home.html#categories">
+            Categories
+        </a>
+
+        <a href="customer-home.html#offers">
+            Offers
+        </a>
+
+        <a href="#">
+            Chat with Creator
+        </a>
+
+    </nav>
+
+
+    <!-- ================= CRAFT DETAILS ================= -->
+
+    <main class="craft-details">
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="craft-image-section">
+
+            <div class="verified-badge">
+                ✓ Verified Handmade
+            </div>
+
+            <div class="craft-image">
+
+                <img
+                    src="images/featured-pottery.jpg"
+                    alt="Terracotta Handcrafted Pot"
+                >
+
+            </div>
+
+
+            <!-- THUMBNAILS -->
+
+            <div class="craft-thumbnails">
+
+                <div class="thumbnail active">
+                    <img
+                        src="images/featured-pottery.jpg"
+                        alt="Craft image"
+                    >
+                </div>
+
+                <div class="thumbnail">
+                    <img
+                        src="images/pottery-2.png"
+                        alt="Craft image"
+                    >
+                </div>
+
+                <div class="thumbnail">
+                    <img
+                        src="images/pottery-3.png"
+                        alt="Craft image"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <section class="craft-info">
+
+            <span class="craft-category">
+                Traditional Pottery
+            </span>
+
+            <h1>
+                Terracotta Handcrafted Pot
+            </h1>
+
+
+            <!-- PRICE + RATING -->
+
+            <div class="price-rating">
+
+                <div>
+
+                    <p class="craft-price">
+                        ₹499
+                    </p>
+
+                    <span class="tax-text">
+                        Inclusive of all taxes
+                    </span>
+
+                </div>
+
+                <div class="rating">
+                    ★ 4.8
+                </div>
+
+            </div>
+
+
+            <!-- HIGHLIGHTS -->
+
+            <div class="craft-highlights">
+
+                <span>♧ 100% Handmade</span>
+                <span>◉ Sustainable</span>
+                <span>♧ Support Local</span>
+
+            </div>
+
+
+            <!-- FEATURE BUTTONS -->
+
+            <div class="feature-buttons">
+
+                <button onclick="showStory()">
+                    <span>▣</span>
+                    <small>Story</small>
+                </button>
+
+                <button onclick="showRelated()">
+                    <span>♧</span>
+                    <small>Related</small>
+                </button>
+
+                <button onclick="showValue()">
+                    <span>▤</span>
+                    <small>Value</small>
+                </button>
+
+            </div>
+
+
+            <!-- ================= ONLY CRAFT STORY ================= -->
+
+            <div class="craft-story">
+
+                <div class="story-heading">
+
+                    <div class="story-icon">
+                        ♡
+                    </div>
+
+                    <div>
+
+                        <span class="story-label">
+                            THE SOUL BEHIND THE CRAFT
+                        </span>
+
+                        <h3>
+                            Craft Story
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="story-line"></div>
+
+
+                <p>
+                    This craft carries more than beauty — it carries
+                    the time, patience and tradition of the hands that
+                    created it. Every detail reflects a story passed
+                    from one generation to another, keeping a piece
+                    of our heritage alive.
+                </p>
+
+
+                <span class="story-ending">
+                    Made by hands. Carried by generations. ❤️
+                </span>
+
+            </div>
+
+
+            <!-- ================= CREATOR ================= -->
+
+            <div class="creator-info">
+
+                <h3>
+                    Creator
+                </h3>
+
+                <div class="creator-card">
+
+                    <div class="creator-avatar">
+                        A
+                    </div>
+
+                    <div class="creator-details">
+
+                        <strong>
+                            Local Artisan
+                        </strong>
+
+                        <span>
+                            Traditional Craft Creator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PRICE BREAKDOWN ================= -->
+
+            <div class="price-breakdown">
+
+                <h3>
+                    Price Breakdown
+                </h3>
+
+                <div class="price-row">
+                    <span>Creator Price</span>
+                    <span>₹300</span>
+                </div>
+
+                <div class="price-row">
+                    <span>Materials</span>
+                    <span>₹80</span>
+                </div>
+
+                <div class="price-row">
+                    <span>Packaging</span>
+                    <span>₹40</span>
+                </div>
+
+                <div class="price-row">
+                    <span>Platform & Services</span>
+                    <span>₹49</span>
+                </div>
+
+                <div class="price-row total-row">
+                    <span>You Pay</span>
+                    <span class="total-price">₹499</span>
+                </div>
+
+            </div>
+
+
+            <!-- ================= PURCHASE ACTIONS ================= -->
+
+            <div class="purchase-actions">
+
+                <button
+                    class="chat-btn"
+                    onclick="showMessage('Chat with Creator')"
+                >
+                    ♡ Chat with Creator
+                </button>
+
+                <button
+                    class="add-cart-btn"
+                    onclick="addToCart()"
+                >
+                    Add to Cart
+                </button>
+
+                <button
+                    class="buy-now-btn"
+                    onclick="buyNow()"
+                >
+                    Order Now
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Kalasetu. Preserving tradition,
+            empowering artisans.
+        </p>
+
+    </footer>
+
+
+    <script src="craft-details.js"></script>
+
+</body>
+</html>

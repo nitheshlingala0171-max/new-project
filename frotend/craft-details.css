@@ -1,0 +1,819 @@
+/* ================= RESET ================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f6ebdd;
+    color: #33231e;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================= HEADER ================= */
+
+.top-header {
+    width: 100%;
+    height: 78px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 45px;
+    border-bottom: 1px solid #e5d7c3;
+
+    gap: 30px;
+}
+
+
+/* ================= LOGO ================= */
+
+.logo-area {
+    width: 190px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.logo-area img {
+    width: 75px;
+    height: 75px;
+
+    display: block;
+
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-area {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    max-width: 620px;
+    margin-left: 10px;
+}
+
+.search-area input {
+    width: 100%;
+    height: 40px;
+
+    border: 1px solid #d7c2a6;
+    border-right: none;
+
+    border-radius: 22px 0 0 22px;
+
+    background: #ffffff;
+
+    padding: 0 17px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.search-area input:focus {
+    border-color: #c65d3b;
+}
+
+.search-area button {
+    height: 40px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 0 22px 22px 0;
+
+    background: #c65d3b;
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.search-area button:hover {
+    background: #a9472b;
+}
+
+
+/* ================= HEADER ICONS ================= */
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-left: auto;
+}
+
+.icon-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.icon-btn svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: #5a3528;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon-btn:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.main-nav {
+    height: 48px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 55px;
+
+    border-bottom: 1px solid #e4d7c4;
+}
+
+.main-nav a {
+    text-decoration: none;
+
+    color: #5a3528;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 15px 0;
+
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: #c65d3b;
+}
+
+
+/* ================= CRAFT DETAILS ================= */
+
+.craft-details {
+    width: calc(100% - 120px);
+    max-width: 1180px;
+
+    margin: 45px auto 60px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 55px;
+
+    align-items: start;
+}
+
+
+/* ================= LEFT IMAGE ================= */
+
+.craft-image-section {
+    width: 100%;
+
+    position: relative;
+}
+
+.verified-badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 2;
+
+    background: #f1f8e9;
+    color: #4f7b45;
+
+    border: 1px solid #cfe3c4;
+
+    padding: 7px 12px;
+
+    border-radius: 18px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.craft-image {
+    width: 100%;
+    height: 480px;
+
+    background: #ffffff;
+
+    border: 1px solid #e0cdb2;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 3px 10px rgba(80, 50, 30, 0.08);
+}
+
+.craft-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ================= THUMBNAILS ================= */
+
+.craft-thumbnails {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.thumbnail {
+    width: 78px;
+    height: 68px;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #dfcdb7;
+
+    cursor: pointer;
+}
+
+.thumbnail.active {
+    border: 2px solid #c65d3b;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ================= CRAFT INFO ================= */
+
+.craft-info {
+    padding: 5px 0;
+}
+
+.craft-category {
+    display: inline-block;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #7b8060;
+
+    margin-bottom: 9px;
+}
+
+.craft-info h1 {
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+    line-height: 1.25;
+
+    color: #5a3528;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================= PRICE + RATING ================= */
+
+.price-rating {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.craft-price {
+    font-size: 25px;
+    font-weight: bold;
+
+    color: #c65d3b;
+}
+
+.tax-text {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #79665d;
+}
+
+.rating {
+    background: #fff8e5;
+
+    border: 1px solid #ead7a8;
+
+    color: #725d22;
+
+    padding: 6px 10px;
+
+    border-radius: 18px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ================= HIGHLIGHTS ================= */
+
+.craft-highlights {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    padding: 12px 0;
+
+    border-top: 1px solid #dfcdb7;
+    border-bottom: 1px solid #dfcdb7;
+
+    font-size: 12px;
+
+    color: #665047;
+}
+
+
+/* ================= FEATURE BUTTONS ================= */
+
+.feature-buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin: 16px 0;
+}
+
+.feature-buttons button {
+    min-height: 65px;
+
+    border: 1px solid #e0cdb2;
+
+    border-radius: 10px;
+
+    background: #fffaf4;
+
+    color: #5a3528;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.feature-buttons button:hover {
+    border-color: #c65d3b;
+}
+
+.feature-buttons span {
+    font-size: 19px;
+}
+
+.feature-buttons small {
+    font-size: 11px;
+}
+
+
+/* ================= CRAFT STORY ================= */
+
+.craft-story {
+    margin-top: 16px;
+
+    padding: 24px 24px 22px;
+
+    background: linear-gradient(
+        135deg,
+        #fffaf4,
+        #f9eee2
+    );
+
+    border: 1px solid #e2cdb5;
+
+    border-left: 4px solid #c65d3b;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 18px rgba(80, 50, 30, 0.08);
+}
+
+
+/* ================= STORY HEADING ================= */
+
+.story-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.story-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f3ddd0;
+
+    color: #c65d3b;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.story-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.7px;
+
+    color: #a17c6b;
+
+    font-weight: 600;
+}
+
+.craft-story h3 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    color: #5a3528;
+}
+
+
+/* ================= STORY DIVIDER ================= */
+
+.story-line {
+    width: 55px;
+
+    height: 2px;
+
+    background: #c65d3b;
+
+    margin-bottom: 16px;
+
+    opacity: 0.65;
+}
+
+
+/* ================= STORY TEXT ================= */
+
+.craft-story p {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    color: #665047;
+
+    font-style: italic;
+}
+
+
+/* ================= STORY ENDING ================= */
+
+.story-ending {
+    display: block;
+
+    margin-top: 16px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #e5d4c1;
+
+    color: #c65d3b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+/* ================= CREATOR ================= */
+
+.creator-info {
+    padding: 17px 0;
+
+    border-bottom: 1px solid #dfcdb7;
+}
+
+.creator-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e0cdb2;
+
+    border-radius: 12px;
+}
+
+.creator-avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #ead8c0;
+
+    color: #5a3528;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.creator-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.creator-details strong {
+    color: #5a3528;
+
+    font-size: 14px;
+}
+
+.creator-details span {
+    color: #79665d;
+
+    font-size: 12px;
+}
+
+
+/* ================= PRICE BREAKDOWN ================= */
+
+.price-breakdown {
+    margin-top: 18px;
+
+    padding: 16px;
+
+    background: #fffaf4;
+
+    border: 1px solid #e0cdb2;
+
+    border-radius: 12px;
+}
+
+.price-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 6px 0;
+
+    font-size: 12px;
+
+    color: #665047;
+}
+
+.total-row {
+    margin-top: 7px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #dfcdb7;
+
+    font-weight: bold;
+
+    color: #5a3528;
+}
+
+.creator-price {
+    color: #5a3528;
+}
+
+.total-price {
+    color: #5b824e;
+}
+
+
+/* ================= PURCHASE ACTIONS ================= */
+
+.purchase-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.chat-btn,
+.add-cart-btn,
+.buy-now-btn {
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border-radius: 23px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.chat-btn {
+    background: #ffffff;
+
+    color: #5a3528;
+
+    border: 1px solid #c65d3b;
+}
+
+.add-cart-btn {
+    background: #ffffff;
+
+    color: #c65d3b;
+
+    border: 1px solid #c65d3b;
+}
+
+.buy-now-btn {
+    background: #c65d3b;
+
+    color: #ffffff;
+
+    border: 1px solid #c65d3b;
+}
+
+.chat-btn:hover,
+.add-cart-btn:hover {
+    background: #c65d3b;
+
+    color: #ffffff;
+}
+
+.buy-now-btn:hover {
+    background: #a9472b;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    margin-top: 40px;
+
+    background: #33231e;
+
+    color: #f6ebdd;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+.footer p {
+    font-size: 12px;
+
+    color: #eadbca;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+
+    .top-header {
+        padding: 10px 20px;
+
+        gap: 15px;
+    }
+
+    .logo-area {
+        width: 80px;
+    }
+
+    .header-icons {
+        gap: 5px;
+    }
+
+    .main-nav {
+        gap: 25px;
+    }
+
+    .craft-details {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .craft-image {
+        height: 360px;
+    }
+
+    .craft-info h1 {
+        font-size: 27px;
+    }
+
+    .feature-buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .purchase-actions {
+        flex-wrap: wrap;
+    }
+
+}

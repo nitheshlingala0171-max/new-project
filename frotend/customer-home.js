@@ -97,11 +97,8 @@ function openCategory(categoryName) {
 /* ================= PRODUCT ================= */
 
 function openProduct(productName) {
-
-    alert(
-        productName +
-        " selected."
-    );
+    window.location.href="craft-details.html?product="+
+    encodeURIComponent(productName);
 }
 
 
