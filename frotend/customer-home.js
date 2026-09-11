@@ -108,6 +108,13 @@ function openProduct(productName) {
 
 function showMessage(item) {
 
+    if (item === "Profile") {
+
+        window.location.href = "customer-profile.html";
+
+        return;
+    }
+
     alert(
         item +
         " feature will be added soon."

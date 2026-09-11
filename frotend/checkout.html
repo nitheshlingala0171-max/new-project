@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | Kalasetu</title>
+
+    <link
+        rel="stylesheet"
+        href="checkout.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="logo-wrap">
+
+                <img
+                    src="images/kalasetu-logo.png"
+                    alt="Kalasetu Logo"
+                >
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <h1>Kalasetu</h1>
+
+                <p>
+                    TRADITION • CRAFT • STORY
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="cart.html"
+            class="back-btn"
+        >
+            ← Back to Cart
+        </a>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-area">
+
+        <div class="checkout-card">
+
+            <h2>
+                Checkout
+            </h2>
+
+            <p class="subtitle">
+                Enter your delivery details and review your order.
+            </p>
+
+
+
+            <div class="checkout-layout">
+
+
+                <!-- ================= DELIVERY DETAILS ================= -->
+
+                <section class="checkout-section">
+
+                    <h3>
+                        Delivery Details
+                    </h3>
+
+
+                    <form id="checkoutForm">
+
+
+                        <!-- NAME + PHONE -->
+
+                        <div class="form-row">
+
+                            <div class="form-field">
+
+                                <label for="customerName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="customerName"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="phone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="Enter your phone number"
+                                    maxlength="10"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ADDRESS -->
+
+                       <div class="form-field">
+    <div class="address-title">
+        <label for="address">Delivery Address</label>
+
+        <button type="button" class="location-btn" onclick="useCurrentLocation()">
+            📍 Use Current Location
+        </button>
+    </div>
+
+    <textarea
+        id="address"
+        placeholder="Enter your complete delivery address"
+        required
+    ></textarea>
+
+    <small id="locationStatus"></small>
+</div>
+
+
+
+                        <!-- CITY + STATE -->
+
+                        <div class="form-row">
+
+                            <div class="form-field">
+
+                                <label for="city">
+                                    City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    placeholder="Enter city"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="state">
+                                    State
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="state"
+                                    placeholder="Enter state"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PINCODE -->
+
+                        <div class="form-field">
+
+                            <label for="pincode">
+                                Pincode
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pincode"
+                                placeholder="Enter 6-digit pincode"
+                                maxlength="6"
+                                required
+                            >
+
+                        </div>
+
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- ================= ORDER SUMMARY ================= -->
+
+                <section class="checkout-section">
+
+                    <h3>
+                        Order Summary
+                    </h3>
+
+
+                    <div id="checkoutItems">
+
+                        <!-- Products will appear here -->
+
+                    </div>
+
+
+                    <div class="total-row">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <span id="checkoutTotal">
+                            ₹0
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        form="checkoutForm"
+                        class="place-order-btn"
+                    >
+                        Place Order
+                    </button>
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        © 2026 Kalasetu • Tradition • Craft • Story
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="checkout.js"></script>
+
+</body>
+
+</html>

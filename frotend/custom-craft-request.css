@@ -1,0 +1,530 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY + BACKGROUND
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    color: #5a3528;
+
+    background-image:
+        linear-gradient(
+            rgba(239, 211, 177, 0.20),
+            rgba(239, 211, 177, 0.20)
+        ),
+        url("images/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.top-header {
+    width: 100%;
+    height: 82px;
+
+    padding: 0 12%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 250, 240, 0.88);
+
+    border-bottom: 1px solid rgba(160, 120, 90, 0.18);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+/* CIRCULAR LOGO */
+
+.logo-wrap {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+}
+
+.logo-wrap img {
+    width: 58px;
+    height: 58px;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+/* BRAND TEXT */
+
+.brand-text h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    color: #5a3528;
+
+    font-weight: 700;
+}
+
+.brand-text p {
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #805c4b;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+    text-decoration: none;
+
+    color: #5a3528;
+
+    font-size: 14px;
+
+    padding: 9px 20px;
+
+    border: 1px solid #c9a988;
+
+    border-radius: 22px;
+
+    background: rgba(255, 250, 240, 0.75);
+
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #fffaf0;
+
+    border-color: #9e7255;
+}
+
+
+/* =========================
+   MAIN AREA
+========================= */
+
+.main-area {
+    min-height: calc(100vh - 82px);
+
+    padding: 28px 20px 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+
+/* =========================
+   REQUEST CARD
+========================= */
+
+.request-card {
+    width: 100%;
+
+    max-width: 716px;
+
+    padding: 27px 28px 20px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 250, 241, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 12px 35px rgba(74, 46, 31, 0.17),
+        0 2px 8px rgba(74, 46, 31, 0.08);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.request-card h2 {
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 31px;
+
+    color: #633822;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #8a604d;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 28px;
+
+    margin-bottom: 17px;
+}
+
+
+/* =========================
+   FORM FIELD
+========================= */
+
+.form-field {
+    width: 100%;
+
+    margin-bottom: 17px;
+}
+
+.form-row .form-field {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.field-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 7px;
+}
+
+.field-title label {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #593526;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SMALL ICON CIRCLE
+========================= */
+
+.field-icon {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #f6e6cf;
+
+    color: #8b4f31;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+
+    border: 1px solid #d9bfa1;
+
+    background: rgba(255, 253, 248, 0.90);
+
+    color: #5a4033;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+
+.form-field input,
+.form-field select {
+    height: 40px;
+
+    padding: 0 13px;
+}
+
+
+.form-field textarea {
+    min-height: 63px;
+
+    padding: 11px 13px;
+
+    resize: vertical;
+}
+
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #a38e7e;
+}
+
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #a46b4c;
+
+    box-shadow:
+        0 0 0 3px rgba(164, 107, 76, 0.10);
+
+    background: #fffdf8;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.form-field select {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* =========================
+   FILE
+========================= */
+
+.file-input {
+    padding: 7px 10px !important;
+
+    height: 40px !important;
+
+    cursor: pointer;
+}
+
+.form-field small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #92796a;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-btn {
+    width: 78%;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 3px auto 20px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #944d2f;
+
+    color: #fffaf4;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(91, 49, 30, 0.18);
+
+    transition: 0.2s;
+}
+
+.submit-btn span {
+    font-size: 13px;
+}
+
+.submit-btn:hover {
+    background: #7e4028;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.card-footer {
+    border-top: 1px solid #ead8c3;
+
+    padding-top: 14px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: #9a8271;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .top-header {
+        height: auto;
+
+        padding: 14px 20px;
+    }
+
+    .brand-text h1 {
+        font-size: 25px;
+    }
+
+    .brand-text p {
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .logo-wrap,
+    .logo-wrap img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .back-btn {
+        padding: 8px 13px;
+
+        font-size: 12px;
+    }
+
+    .main-area {
+        padding: 20px 12px 35px;
+    }
+
+    .request-card {
+        padding: 23px 17px 18px;
+    }
+
+    .request-card h2 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-row .form-field {
+        margin-bottom: 17px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}

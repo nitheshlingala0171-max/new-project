@@ -197,10 +197,46 @@ function showValue() {
 
 /* ================= ADD TO CART ================= */
 
+/* ================= ADD TO CART ================= */
+
 function addToCart() {
+
+    if (!product) {
+        alert("Product not found.");
+        return;
+    }
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingItem = cart.find(
+        item => item.name === productName
+    );
+
+    if (existingItem) {
+
+        existingItem.quantity++;
+
+    } else {
+
+        cart.push({
+            name: productName,
+            image: product.image,
+            category: product.category,
+            price: product.price.replace("₹", "").replace(",", ""),
+            quantity: 1
+        });
+
+    }
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
 
     alert(productName + " added to cart.");
 
+    window.location.href = "cart.html";
 }
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -64,8 +64,9 @@
 
             <!-- Wishlist -->
             <button
+                type="button"
                 class="icon-btn"
-                onclick="showMessage('Wishlist')"
+                onclick="window.location.href='wishlist.html';"
                 title="Wishlist"
             >
                 <svg viewBox="0 0 24 24">
@@ -79,11 +80,12 @@
 
 
             <!-- Cart -->
-            <button
-                class="icon-btn"
-                onclick="showMessage('Cart')"
-                title="Cart"
-            >
+            <!-- Cart -->
+<button
+    class="icon-btn"
+    onclick="window.location.href='cart.html';"
+    title="Cart"
+>
                 <svg viewBox="0 0 24 24">
 
                     <path
@@ -153,11 +155,10 @@
         </a>
 
         <a
-            href="#creator"
-            onclick="showMessage('Chat with Creator')"
-        >
-            Chat with Creator
-        </a>
+    href="chat-with-creator.html"
+>
+    Chat with Creator
+</a>
 
     </nav>
 
@@ -470,6 +471,16 @@
                     onclick="openProduct('Terracotta Handcrafted Pot')"
                 >
 
+                    <!-- WISHLIST HEART -->
+                    <button
+                        type="button"
+                        class="product-wishlist"
+                        onclick="addToWishlist(event, 'Terracotta Handcrafted Pot', 'Traditional Pottery', 499, 'images/featured-pottery.jpg')"
+                        title="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
                     <div class="product-image">
 
                         <img
@@ -505,6 +516,16 @@
                     class="product-card"
                     onclick="openProduct('Handloom Cotton Saree')"
                 >
+
+                    <!-- WISHLIST HEART -->
+                    <button
+                        type="button"
+                        class="product-wishlist"
+                        onclick="addToWishlist(event, 'Handloom Cotton Saree', 'Traditional Textiles', 1299, 'images/featured-textiles.jpg')"
+                        title="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
 
                     <div class="product-image">
 
@@ -542,6 +563,16 @@
                     onclick="openProduct('Wooden Elephant Figurine')"
                 >
 
+                    <!-- WISHLIST HEART -->
+                    <button
+                        type="button"
+                        class="product-wishlist"
+                        onclick="addToWishlist(event, 'Wooden Elephant Figurine', 'Woodcraft', 699, 'images/featured-woodcraft.jpeg')"
+                        title="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
                     <div class="product-image">
 
                         <img
@@ -577,6 +608,16 @@
                     class="product-card"
                     onclick="openProduct('Oxidised Silver Earrings')"
                 >
+
+                    <!-- WISHLIST HEART -->
+                    <button
+                        type="button"
+                        class="product-wishlist"
+                        onclick="addToWishlist(event, 'Oxidised Silver Earrings', 'Handmade Jewellery', 349, 'images/featured-jewellery.jpg')"
+                        title="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
 
                     <div class="product-image">
 
@@ -614,6 +655,16 @@
                     onclick="openProduct('Hand Painted Tea Set')"
                 >
 
+                    <!-- WISHLIST HEART -->
+                    <button
+                        type="button"
+                        class="product-wishlist"
+                        onclick="addToWishlist(event, 'Hand Painted Tea Set', 'Handmade Ceramic', 899, 'images/featured-teaset.jpg')"
+                        title="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
                     <div class="product-image">
 
                         <img
@@ -649,6 +700,16 @@
                     class="product-card"
                     onclick="openProduct('Palm Leaf Basket')"
                 >
+
+                    <!-- WISHLIST HEART -->
+                    <button
+                        type="button"
+                        class="product-wishlist"
+                        onclick="addToWishlist(event, 'Palm Leaf Basket', 'Natural Craft', 399, 'images/featured-basket.jpg')"
+                        title="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
 
                     <div class="product-image">
 
@@ -744,7 +805,7 @@
                         My Orders
                     </a>
 
-                    <a href="#">
+                    <a href="wishlist.html">
                         Wishlist
                     </a>
 

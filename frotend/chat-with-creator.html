@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat with Creator | Kalasetu</title>
+
+    <link rel="stylesheet" href="chat-with-creator.css">
+</head>
+
+<body>
+
+    <!-- ================= DECORATIVE FLOWERS ================= -->
+
+    <div class="flower flower-1">✿</div>
+    <div class="flower flower-2">❀</div>
+    <div class="flower flower-3">✿</div>
+    <div class="flower flower-4">❀</div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="logo-wrap">
+                <img
+                    src="images/kalasetu-logo.png"
+                    alt="Kalasetu Logo"
+                >
+            </div>
+
+            <div class="brand-text">
+                <h1>Kalasetu</h1>
+
+                <p>
+                    TRADITION • CRAFT • STORY
+                </p>
+            </div>
+
+        </div>
+
+        <a
+            href="customer-home.html"
+            class="back-btn"
+        >
+            ← Back to Home
+        </a>
+
+    </header>
+
+
+    <!-- ================= MAIN CHAT AREA ================= -->
+
+    <main class="chat-page">
+
+        <section class="chat-container">
+
+
+            <!-- ================= CHAT HEADER ================= -->
+
+            <div class="chat-header">
+
+                <div class="creator-profile">
+
+                    <div class="creator-avatar">
+                        🧑‍🎨
+                    </div>
+
+                    <div class="creator-details">
+
+                        <h2>
+                            Local Artisan
+                        </h2>
+
+                        <p>
+                            ● Online
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-flower">
+                    ❀
+                </div>
+
+            </div>
+
+
+            <!-- ================= PRODUCT CONTEXT ================= -->
+
+            <div class="product-context">
+
+                <div class="product-mini-image">
+
+                    <img
+                        src="images/featured-pottery.jpg"
+                        alt="Terracotta Handcrafted Pot"
+                    >
+
+                </div>
+
+                <div class="product-mini-info">
+
+                    <span>
+                        Asking about this craft
+                    </span>
+
+                    <h3>
+                        Terracotta Handcrafted Pot
+                    </h3>
+
+                    <p>
+                        Traditional Pottery • ₹499
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CHAT MESSAGES ================= -->
+
+            <div
+                class="chat-messages"
+                id="chatMessages"
+            >
+
+                <div class="date-label">
+                    Today
+                </div>
+
+
+                <!-- CREATOR MESSAGE -->
+
+                <div class="message-row creator-message">
+
+                    <div class="message-avatar">
+                        🧑‍🎨
+                    </div>
+
+                    <div>
+
+                        <div class="message-bubble">
+                            Hello! 👋
+                            How can I help you with this craft?
+                        </div>
+
+                        <span class="message-time">
+                            10:30 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CUSTOMER MESSAGE -->
+
+                <div class="message-row customer-message">
+
+                    <div>
+
+                        <div class="message-bubble">
+                            Hi! I wanted to know more about this
+                            terracotta pot.
+                        </div>
+
+                        <span class="message-time">
+                            10:31 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CREATOR MESSAGE -->
+
+                <div class="message-row creator-message">
+
+                    <div class="message-avatar">
+                        🧑‍🎨
+                    </div>
+
+                    <div>
+
+                        <div class="message-bubble">
+                            Sure! It is completely handmade
+                            using traditional pottery techniques.
+                        </div>
+
+                        <span class="message-time">
+                            10:32 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ================= QUICK QUESTIONS ================= -->
+
+            <div class="quick-section">
+
+                <span>
+                    Quick questions
+                </span>
+
+                <div class="quick-buttons">
+
+                    <button
+                        onclick="sendQuickMessage('What is the size of this craft?')"
+                    >
+                        What is the size?
+                    </button>
+
+                    <button
+                        onclick="sendQuickMessage('Can this be customised?')"
+                    >
+                        Can it be customised?
+                    </button>
+
+                    <button
+                        onclick="sendQuickMessage('How long will delivery take?')"
+                    >
+                        Delivery time?
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MESSAGE INPUT ================= -->
+
+            <div class="message-input-area">
+
+                <button
+                    type="button"
+                    class="emoji-btn"
+                    onclick="addEmoji()"
+                >
+                    ☺
+                </button>
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Write a message..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    class="send-btn"
+                    onclick="sendMessage()"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+
+            <!-- ================= CHAT FOOTER ================= -->
+
+            <div class="chat-footer">
+
+                ✿ Talk directly with the creator about this craft ✿
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="chat-with-creator.js"></script>
+
+</body>
+
+</html>

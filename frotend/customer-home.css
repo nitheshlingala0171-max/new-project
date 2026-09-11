@@ -1,10 +1,10 @@
 /* =========================================================
    KALASETU - CUSTOMER HOME
    CLEAN CSS
-   Git conflict markers removed.
-   Existing design/layout preserved around the newer
-   top-header / category-row / product-card structure.
+   Existing design/layout preserved
+   Product Wishlist Heart Added
    ========================================================= */
+
 
 /* ================= GENERAL ================= */
 
@@ -31,6 +31,7 @@ input {
     font-family: inherit;
 }
 
+
 /* ================= HEADER ================= */
 
 .top-header {
@@ -49,7 +50,9 @@ input {
     transition: 0.25s;
 }
 
+
 /* Logo - complete logo stays visible */
+
 .logo-area {
     width: 190px;
     height: 70px;
@@ -66,6 +69,7 @@ input {
     display: block;
     border-radius: 50%;
 }
+
 
 /* ================= SEARCH ================= */
 
@@ -107,6 +111,7 @@ input {
     background: #73402e;
 }
 
+
 /* ================= HEADER ICONS ================= */
 
 .header-icons {
@@ -140,6 +145,7 @@ input {
 .icon-btn:hover svg {
     stroke: #9b573c;
 }
+
 
 /* ================= NAV ================= */
 
@@ -176,6 +182,7 @@ input {
     height: 2px;
     background: #98553b;
 }
+
 
 /* ================= FESTIVAL BANNER ================= */
 
@@ -214,7 +221,9 @@ input {
     object-position: center;
 }
 
+
 /* Transparent clickable area over CTA */
+
 .festival-button {
     position: absolute;
     left: 50%;
@@ -226,6 +235,7 @@ input {
     background: transparent;
     cursor: pointer;
 }
+
 
 /* Banner arrows */
 
@@ -258,6 +268,7 @@ input {
     right: 12px;
 }
 
+
 /* ================= CONTENT ================= */
 
 .content-section {
@@ -284,6 +295,7 @@ input {
     color: #876e5e;
 }
 
+
 /* ================= EXPLORE CRAFTS ================= */
 
 .category-row {
@@ -299,6 +311,7 @@ input {
 .category-row::-webkit-scrollbar {
     display: none;
 }
+
 
 /* Bigger circles so complete craft images can be seen */
 
@@ -354,6 +367,7 @@ input {
     margin-top: 4px;
 }
 
+
 /* ================= FEATURED CRAFTS ================= */
 
 .featured-section {
@@ -373,6 +387,7 @@ input {
     display: none;
 }
 
+
 /* Bigger product card */
 
 .product-card {
@@ -387,6 +402,9 @@ input {
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
+
+    /* Added only for heart positioning */
+    position: relative;
 }
 
 .product-card:hover {
@@ -394,6 +412,49 @@ input {
     box-shadow: 0 7px 15px rgba(75, 45, 25, 0.13);
     border-color: #bd9270;
 }
+
+
+/* ================= PRODUCT WISHLIST HEART ================= */
+
+/* Heart is placed over the card.
+   It does NOT change the product image size or layout. */
+
+.product-wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 250, 240, 0.95);
+    color: #6f3f2d;
+
+    font-size: 24px;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    cursor: pointer;
+
+    box-shadow: 0 2px 6px rgba(70, 40, 20, 0.15);
+
+    transition: 0.2s ease;
+}
+
+.product-wishlist:hover {
+    background: #6f3f2d;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
 
 /* Complete image area */
 
@@ -408,7 +469,9 @@ input {
     justify-content: center;
 }
 
+
 /* Keep the complete image visible */
+
 .product-image img {
     width: 100%;
     height: 100%;
@@ -416,6 +479,7 @@ input {
     object-fit: cover;
     object-position: center;
 }
+
 
 /* ================= PRODUCT DETAILS ================= */
 
@@ -441,6 +505,7 @@ input {
     font-weight: bold;
     color: #8e4e35;
 }
+
 
 /* ================= FOOTER ================= */
 
@@ -516,6 +581,7 @@ input {
     color: #d9c7b4;
 }
 
+
 /* ================= BOTTOM NAV ================= */
 
 .bottom-nav {
@@ -553,6 +619,7 @@ input {
     color: #C65D3B;
 }
 
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
@@ -588,6 +655,7 @@ input {
         justify-content: flex-start;
     }
 }
+
 
 @media (max-width: 650px) {
 
@@ -678,6 +746,7 @@ input {
         justify-content: space-around;
     }
 }
+
 
 /* ================= VERY SMALL MOBILE ================= */
 

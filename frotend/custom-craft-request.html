@@ -1,0 +1,292 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Custom Craft Request | Kalasetu</title>
+
+    <link rel="stylesheet" href="custom-craft-request.css">
+</head>
+
+<body>
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="logo-wrap">
+                <img src="images/kalasetu-logo.png" alt="Kalasetu Logo">
+            </div>
+
+            <div class="brand-text">
+                <h1>Kalasetu</h1>
+                <p>TRADITION • CRAFT • STORY</p>
+            </div>
+
+        </div>
+
+        <a href="custom-craft-requests.html" class="back-btn">
+            ← Back
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="main-area">
+
+        <div class="request-card">
+
+            <h2>Create Custom Craft Request</h2>
+
+            <p class="subtitle">
+                Tell our creators what you need and get a craft specially made for you.
+            </p>
+
+
+            <form>
+
+
+                <!-- ROW 1 -->
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <div class="field-title">
+                            <span class="field-icon">♟</span>
+
+                            <label for="craftType">
+                                Craft / Product Type
+                            </label>
+                        </div>
+
+                        <select id="craftType" required>
+
+                            <option value="">
+                                Select craft type
+                            </option>
+
+                            <option>Handmade Jewellery</option>
+                            <option>Traditional Painting</option>
+                            <option>Pottery</option>
+                            <option>Wood Craft</option>
+                            <option>Hand Embroidery</option>
+                            <option>Home Decor</option>
+                            <option>Traditional Clothing</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <div class="field-title">
+                            <span class="field-icon">▣</span>
+
+                            <label for="occasion">
+                                Occasion
+                            </label>
+                        </div>
+
+                        <select id="occasion" required>
+
+                            <option value="">
+                                Select occasion
+                            </option>
+
+                            <option>Birthday</option>
+                            <option>Wedding</option>
+                            <option>Festival</option>
+                            <option>Gift</option>
+                            <option>Home Decoration</option>
+                            <option>Traditional Event</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUDGET -->
+
+                <div class="form-field full-field">
+
+                    <div class="field-title">
+                        <span class="field-icon">₹</span>
+
+                        <label for="budget">
+                            Budget
+                        </label>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="budget"
+                        placeholder="Enter your budget in ₹"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ROW 2 -->
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <div class="field-title">
+                            <span class="field-icon">●</span>
+
+                            <label for="colour">
+                                Preferred Colour
+                            </label>
+                        </div>
+
+                        <input
+                            type="text"
+                            id="colour"
+                            placeholder="Example: Red, Blue, Green"
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <div class="field-title">
+                            <span class="field-icon">▰</span>
+
+                            <label for="size">
+                                Preferred Size
+                            </label>
+                        </div>
+
+                        <input
+                            type="text"
+                            id="size"
+                            placeholder="Example: Small, Medium, 12 inches"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CUSTOMISATION -->
+
+                <div class="form-field full-field">
+
+                    <div class="field-title">
+                        <span class="field-icon">✎</span>
+
+                        <label for="customisation">
+                            Customisation Requirements
+                        </label>
+                    </div>
+
+                    <textarea
+                        id="customisation"
+                        placeholder="Describe how you want the craft to be customised..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- REFERENCE IMAGE -->
+
+                <div class="form-field full-field">
+
+                    <div class="field-title">
+                        <span class="field-icon">▣</span>
+
+                        <label for="reference">
+                            Reference Image
+                        </label>
+                    </div>
+
+                    <input
+                        class="file-input"
+                        type="file"
+                        id="reference"
+                        accept="image/*"
+                    >
+
+                    <small>
+                        Upload an image if you have a reference design.
+                    </small>
+
+                </div>
+
+
+                <!-- DATE -->
+
+                <div class="form-field full-field">
+
+                    <div class="field-title">
+                        <span class="field-icon">▣</span>
+
+                        <label for="requiredDate">
+                            Required Date
+                        </label>
+                    </div>
+
+                    <input
+                        type="date"
+                        id="requiredDate"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ADDITIONAL -->
+
+                <div class="form-field full-field">
+
+                    <div class="field-title">
+                        <span class="field-icon">▤</span>
+
+                        <label for="instructions">
+                            Additional Instructions
+                        </label>
+                    </div>
+
+                    <textarea
+                        id="instructions"
+                        placeholder="Add any other details for the creator..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button type="submit" class="submit-btn">
+                    Submit Request
+                    <span>➤</span>
+                </button>
+
+            </form>
+
+
+            <!-- CARD FOOTER -->
+
+            <div class="card-footer">
+                © 2026 Kalasetu • Tradition • Craft • Story
+            </div>
+
+        </div>
+
+    </main>
+<script src="custom-craft-request.js"></script>
+</body>
+</html>
