@@ -1,33 +1,10 @@
-<<<<<<< HEAD
- // ================= FESTIVAL SLIDER =================
-
-const slides = document.querySelectorAll(".festival-slide");
-const dots = document.querySelectorAll(".festival-dot");
-
-const prevBtn = document.getElementById("festivalPrev");
-const nextBtn = document.getElementById("festivalNext");
-
-let currentSlide = 0;
-let slideTimer;
+/* =========================================================
+   KALASETU - CUSTOMER HOME JAVASCRIPT
+   Clean version - Git conflicts removed
+   ========================================================= */
 
 
-// Show selected slide
-function showSlide(index) {
-
-    if (index >= slides.length) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = slides.length - 1;
-    } else {
-        currentSlide = index;
-    }
-
-    // Remove active from all slides
-    slides.forEach((slide) => {
-        slide.classList.remove("active");
-    });
-=======
- /* ================= FESTIVAL CAROUSEL ================= */
+/* ================= FESTIVAL CAROUSEL ================= */
 
 let currentFestival = 0;
 
@@ -36,7 +13,13 @@ const festivalTrack = document.getElementById("festivalTrack");
 const totalFestivals = 3;
 
 
+/* Show selected festival */
+
 function showFestival(index) {
+
+    if (!festivalTrack) {
+        return;
+    }
 
     if (index < 0) {
         currentFestival = totalFestivals - 1;
@@ -55,21 +38,32 @@ function showFestival(index) {
 }
 
 
+/* Next festival */
+
 function nextFestival() {
+
     showFestival(currentFestival + 1);
+
 }
 
+
+/* Previous festival */
 
 function previousFestival() {
+
     showFestival(currentFestival - 1);
+
 }
 
 
-/* Automatic carousel */
+/* Automatic festival carousel */
 
 setInterval(function () {
+
     nextFestival();
+
 }, 5000);
+
 
 
 /* ================= FESTIVAL BUTTON ================= */
@@ -80,7 +74,9 @@ function exploreFestival(festivalName) {
         festivalName +
         " collection will be available here."
     );
+
 }
+
 
 
 /* ================= CATEGORY ================= */
@@ -91,23 +87,34 @@ function openCategory(categoryName) {
         categoryName +
         " category selected."
     );
+
 }
+
 
 
 /* ================= PRODUCT ================= */
 
 function openProduct(productName) {
-    window.location.href="craft-details.html?product="+
-    encodeURIComponent(productName);
+
+    window.location.href =
+        "craft-details.html?product=" +
+        encodeURIComponent(productName);
+
 }
+
 
 
 /* ================= HEADER ICONS ================= */
 
 function showMessage(item) {
 
-    alert(item + " feature will be added soon.");
+    alert(
+        item +
+        " feature will be added soon."
+    );
+
 }
+
 
 
 /* ================= SEARCH ================= */
@@ -117,12 +124,18 @@ function searchProducts() {
     const searchInput =
         document.getElementById("searchInput");
 
+    if (!searchInput) {
+        return;
+    }
+
     const value =
         searchInput.value.trim();
 
     if (value === "") {
 
-        alert("Please enter something to search.");
+        alert(
+            "Please enter something to search."
+        );
 
         return;
     }
@@ -130,95 +143,36 @@ function searchProducts() {
     alert(
         "Searching for: " + value
     );
+
 }
->>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
 
-    // Remove active from all dots
-    dots.forEach((dot) => {
-        dot.classList.remove("active");
-    });
 
-<<<<<<< HEAD
-    // Add active to current slide
-    slides[currentSlide].classList.add("active");
 
-    // Add active to current dot
-    if (dots[currentSlide]) {
-        dots[currentSlide].classList.add("active");
-    }
-}
-=======
 /* ================= ENTER KEY SEARCH ================= */
 
-document
-    .getElementById("searchInput")
-    .addEventListener("keydown", function (event) {
-
-        if (event.key === "Enter") {
->>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
-
-            searchProducts();
-
-<<<<<<< HEAD
-// Next slide
-function nextSlide() {
-    showSlide(currentSlide + 1);
-    restartTimer();
-}
+const searchInput =
+    document.getElementById("searchInput");
 
 
-// Previous slide
-function previousSlide() {
-    showSlide(currentSlide - 1);
-    restartTimer();
-}
+if (searchInput) {
 
+    searchInput.addEventListener(
+        "keydown",
+        function (event) {
 
-// Start automatic slider
-function startTimer() {
-    slideTimer = setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 4000);
-}
+            if (event.key === "Enter") {
 
+                searchProducts();
 
-// Restart timer after manual click
-function restartTimer() {
-    clearInterval(slideTimer);
-    startTimer();
-}
+            }
 
-
-// Next button
-if (nextBtn) {
-    nextBtn.addEventListener("click", nextSlide);
-}
-
-
-// Previous button
-if (prevBtn) {
-    prevBtn.addEventListener("click", previousSlide);
-}
-
-
-// Dot buttons
-dots.forEach((dot, index) => {
-
-    dot.addEventListener("click", () => {
-
-        showSlide(index);
-        restartTimer();
-
-    });
-
-});
-
-
-// Start slider
-showSlide(0);
-startTimer();
-=======
         }
+    );
 
-    });
->>>>>>> 0a10b678362e0484a991201ef173b6d4ef8aeb91
+}
+
+
+
+/* ================= INITIAL SLIDE ================= */
+
+showFestival(0);
