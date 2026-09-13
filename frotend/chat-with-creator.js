@@ -83,9 +83,7 @@ function addCreatorMessage(message) {
         });
 
     messageRow.innerHTML = `
-        <div class="message-avatar">
-            🧑‍🎨
-        </div>
+        <div class="message-avatar"></div>
 
         <div>
 

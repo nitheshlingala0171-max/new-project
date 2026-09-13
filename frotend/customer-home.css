@@ -783,3 +783,13 @@ input {
         height: 150px;
     }
 }
+.view-all-btn {
+    color: #C65D3B;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.view-all-btn:hover {
+    color: #98553B;
+}

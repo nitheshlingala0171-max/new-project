@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalasetu - Create Account</title>
+    <link rel="stylesheet" href="customer-register.css">
+</head>
+
+<body>
+
+<div class="register-container">
+
+    <div class="register-card">
+
+        <div class="logo">
+            <img src="images/kalasetu-logo.png" alt="Kalasetu">
+        </div>
+
+        <h1>Create Account</h1>
+        <p class="subtitle">Create your Kalasetu account</p>
+
+        <form id="registerForm">
+
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="contact">Email or Mobile Number</label>
+                <input
+                    type="text"
+                    id="contact"
+                    placeholder="Enter email or mobile number"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="password">Create Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create password"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="create-btn">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="login-text">
+            Already have an account?
+           <a href="customer-auth.html" id="loginLink">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="customer-register.js"></script>
+
+</body>
+</html>

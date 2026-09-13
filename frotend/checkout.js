@@ -191,6 +191,15 @@ document
 
             return;
         }
+        const selectedPayment =
+    document.querySelector('input[name="paymentMethod"]:checked');
+
+if (!selectedPayment) {
+    alert("Please select a payment method.");
+    return;
+}
+
+const paymentMethod = selectedPayment.value;
 
 
 
@@ -226,6 +235,7 @@ document
             state: state,
 
             pincode: pincode,
+            paymentMethod: paymentMethod,
 
             items: cart,
 
@@ -237,6 +247,7 @@ document
                 new Date().toLocaleString("en-IN")
 
         };
+        
 
 
 
@@ -271,7 +282,7 @@ document
 
         /* ================= MY ORDERS ================= */
 
-        window.location.replace("my-orders.html");
+        window.location.href = "order-confirmation.html";
 
     });
 

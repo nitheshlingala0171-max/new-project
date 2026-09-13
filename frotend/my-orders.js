@@ -1,4 +1,4 @@
-/* =========================================================
+ /* =========================================================
    KALASETU - MY ORDERS
    ========================================================= */
 
@@ -8,10 +8,38 @@ let orders =
     JSON.parse(localStorage.getItem("orders")) || [];
 
 
+/* ================= CANCEL ORDER ================= */
+
+function cancelOrder(orderId) {
+
+    const confirmCancel =
+        confirm("Are you sure you want to cancel this order?");
+
+    if (!confirmCancel) {
+        return;
+    }
+
+    /* Remove the selected order */
+    orders = orders.filter(function(order) {
+        return order.id !== orderId;
+    });
+
+    /* Save updated orders */
+    localStorage.setItem(
+        "orders",
+        JSON.stringify(orders)
+    );
+
+    /* Refresh My Orders page */
+    displayOrders();
+}
+
+
 /* ================= DISPLAY ORDERS ================= */
 
 function displayOrders() {
 
+    /* No orders */
     if (orders.length === 0) {
 
         ordersList.innerHTML = `
@@ -45,7 +73,8 @@ function displayOrders() {
     ordersList.innerHTML = "";
 
 
-    orders.slice().reverse().forEach(function (order) {
+    /* Display latest order first */
+    orders.slice().reverse().forEach(function(order) {
 
         const orderCard =
             document.createElement("div");
@@ -57,7 +86,8 @@ function displayOrders() {
         let itemsHTML = "";
 
 
-        order.items.forEach(function (item) {
+        /* Display products inside order */
+        order.items.forEach(function(item) {
 
             const quantity =
                 Number(item.quantity) || 1;
@@ -102,6 +132,7 @@ function displayOrders() {
         });
 
 
+        /* Order card */
         orderCard.innerHTML = `
 
             <div class="order-header">
@@ -173,6 +204,14 @@ function displayOrders() {
 
             </div>
 
+
+            <button
+                class="cancel-order-btn"
+                onclick="cancelOrder(${order.id})"
+            >
+                Cancel Order
+            </button>
+
         `;
 
 
@@ -181,5 +220,7 @@ function displayOrders() {
     });
 }
 
+
+/* ================= START ================= */
 
 displayOrders();

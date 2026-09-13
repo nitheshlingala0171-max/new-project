@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(244, 234, 220, 0.20),
+            rgba(244, 234, 220, 0.20)
+        ),
+        url("./images/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #33231e;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================= HEADER ================= */
+
+.tracking-header {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 18px 45px;
+
+    background: rgba(255, 250, 244, 0.90);
+
+    border-bottom: 1px solid #dfd0c0;
+}
+
+
+.logo-area img {
+
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.brand-name {
+    margin-left: 14px;
+}
+
+
+.brand-name h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: 27px;
+
+    color: #33231e;
+
+    margin-bottom: 3px;
+}
+
+
+.brand-name p {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #806b5d;
+}
+
+
+/* ================= MAIN ================= */
+
+.tracking-container {
+
+    min-height: calc(100vh - 95px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ================= CARD ================= */
+
+.tracking-card {
+
+    width: 100%;
+
+    max-width: 620px;
+
+    background: rgba(255, 250, 244, 0.94);
+
+    border: 1px solid #dfd0c0;
+
+    border-radius: 18px;
+
+    padding: 40px 45px;
+
+    box-shadow:
+        0 12px 35px rgba(80, 55, 35, 0.12);
+}
+
+
+.tracking-card h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    text-align: center;
+
+    color: #33231e;
+
+    margin-bottom: 10px;
+}
+
+
+.tracking-message {
+
+    text-align: center;
+
+    color: #75645b;
+
+    font-size: 15px;
+
+    margin-bottom: 28px;
+}
+
+
+/* ================= ORDER INFO ================= */
+
+.order-info {
+
+    border-top: 1px solid #dfd0c0;
+
+    border-bottom: 1px solid #dfd0c0;
+
+    padding: 6px 0;
+
+    margin-bottom: 35px;
+}
+
+
+.info-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 4px;
+
+    border-bottom: 1px solid #eadfd4;
+
+    font-size: 14px;
+}
+
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+
+.info-row span {
+    color: #75645b;
+}
+
+
+.info-row strong {
+    color: #33231e;
+}
+
+
+/* ================= TIMELINE ================= */
+
+.tracking-timeline {
+
+    position: relative;
+
+    margin-left: 8px;
+
+    margin-bottom: 35px;
+}
+
+
+.tracking-timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    top: 20px;
+
+    bottom: 20px;
+
+    width: 2px;
+
+    background: #dfd0c0;
+}
+
+
+/* ================= TIMELINE ITEM ================= */
+
+.timeline-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    min-height: 82px;
+}
+
+
+/* ================= ICON ================= */
+
+.timeline-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 42px;
+
+    height: 42px;
+
+    min-width: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #eadfd4;
+
+    border: 2px solid #dfd0c0;
+
+    color: #806b5d;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-right: 18px;
+}
+
+
+/* ================= COMPLETED ================= */
+
+.timeline-item.completed .timeline-icon {
+
+    background: #6f8b57;
+
+    border-color: #6f8b57;
+
+    color: white;
+}
+
+
+/* ================= ACTIVE ================= */
+
+.timeline-item.active .timeline-icon {
+
+    background: #6f593f;
+
+    border-color: #6f593f;
+
+    color: white;
+
+    box-shadow:
+        0 0 0 5px rgba(111, 89, 63, 0.12);
+}
+
+
+/* ================= CONTENT ================= */
+
+.timeline-content {
+
+    padding-top: 3px;
+
+    padding-bottom: 22px;
+}
+
+
+.timeline-content h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    color: #33231e;
+
+    margin-bottom: 5px;
+}
+
+
+.timeline-content p {
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #75645b;
+
+    max-width: 430px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.home-btn {
+
+    width: 100%;
+
+    padding: 13px 18px;
+
+    border: 1px solid #6f593f;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #6f593f;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.home-btn:hover {
+
+    background: #f0e4d7;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .tracking-header {
+
+        padding: 15px 20px;
+    }
+
+
+    .brand-name h1 {
+
+        font-size: 23px;
+    }
+
+
+    .tracking-card {
+
+        padding: 30px 22px;
+    }
+
+
+    .tracking-card h2 {
+
+        font-size: 26px;
+    }
+
+
+    .info-row {
+
+        font-size: 13px;
+    }
+
+
+    .timeline-content h3 {
+
+        font-size: 16px;
+    }
+
+
+    .timeline-content p {
+
+        font-size: 12px;
+    }
+
+}

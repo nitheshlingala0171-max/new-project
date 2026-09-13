@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(244, 234, 220, 0.72),
+            rgba(244, 234, 220, 0.72)
+        ),
+        url("./images/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #33231e;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================= HEADER ================= */
+
+.confirmation-header {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 18px 45px;
+
+    background: rgba(255, 250, 244, 0.90);
+
+    border-bottom: 1px solid #dfd0c0;
+}
+
+
+.logo-area img {
+
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.brand-name {
+    margin-left: 14px;
+}
+
+
+.brand-name h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: 27px;
+
+    color: #33231e;
+
+    margin-bottom: 3px;
+}
+
+
+.brand-name p {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #806b5d;
+}
+
+
+/* ================= MAIN ================= */
+
+.confirmation-container {
+
+    min-height: calc(100vh - 95px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ================= CARD ================= */
+
+.confirmation-card {
+
+    width: 100%;
+    max-width: 560px;
+
+    background: rgba(255, 250, 244, 0.94);
+
+    border: 1px solid #dfd0c0;
+
+    border-radius: 18px;
+
+    padding: 42px 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(80, 55, 35, 0.12);
+}
+
+
+/* ================= SUCCESS ICON ================= */
+
+.success-icon {
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #6f8b57;
+
+    color: white;
+
+    font-size: 38px;
+    font-weight: bold;
+}
+
+
+.confirmation-card h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    color: #33231e;
+
+    margin-bottom: 12px;
+}
+
+
+.success-message {
+
+    color: #75645b;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 28px;
+}
+
+
+/* ================= ORDER DETAILS ================= */
+
+.order-details {
+
+    border-top: 1px solid #dfd0c0;
+    border-bottom: 1px solid #dfd0c0;
+
+    padding: 8px 0;
+
+    margin-bottom: 28px;
+}
+
+
+.detail-row {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 4px;
+
+    border-bottom: 1px solid #eadfd4;
+
+    font-size: 14px;
+}
+
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+
+.detail-row span {
+    color: #75645b;
+}
+
+
+.detail-row strong {
+    color: #33231e;
+}
+
+
+.total-row strong {
+
+    font-size: 19px;
+
+    color: #6f593f;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.confirmation-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: center;
+}
+
+
+.confirmation-actions button {
+
+    flex: 1;
+
+    padding: 13px 18px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.track-btn {
+
+    border: none;
+
+    background: #6f593f;
+
+    color: white;
+}
+
+
+.track-btn:hover {
+
+    background: #59452f;
+}
+
+
+.home-btn {
+
+    border: 1px solid #6f593f;
+
+    background: transparent;
+
+    color: #6f593f;
+}
+
+
+.home-btn:hover {
+
+    background: #f0e4d7;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .confirmation-header {
+        padding: 15px 20px;
+    }
+
+    .confirmation-card {
+        padding: 32px 22px;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+    }
+
+    .brand-name h1 {
+        font-size: 23px;
+    }
+
+}
+/* ================= SUCCESS BLAST ================= */
+
+#confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 10px;
+    height: 18px;
+
+    opacity: 1;
+
+    animation: blast 1.5s cubic-bezier(.15,.75,.25,1) forwards;
+}
+
+@keyframes blast {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            scale(0.2);
+
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(var(--x), var(--y))
+            rotate(var(--r))
+            scale(1);
+
+        opacity: 0;
+    }
+}

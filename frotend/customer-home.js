@@ -121,64 +121,178 @@ function showMessage(item) {
     );
 
 }
+/* ================= WISHLIST ================= */
 
+/* ================= WISHLIST ================= */
 
+function addToWishlist(event, productName, category, price, image) {
 
-/* ================= SEARCH ================= */
+    event.stopPropagation();
 
-function searchProducts() {
+    let wishlist =
+        JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    const searchInput =
-        document.getElementById("searchInput");
-
-    if (!searchInput) {
-        return;
-    }
-
-    const value =
-        searchInput.value.trim();
-
-    if (value === "") {
-
-        alert(
-            "Please enter something to search."
-        );
-
-        return;
-    }
-
-    alert(
-        "Searching for: " + value
+    // Check if already added
+    const alreadyExists = wishlist.some(
+        item => item.name === productName
     );
 
+    if (alreadyExists) {
+        alert("Already added to Wishlist ❤️");
+        return;
+    }
+
+    // Add product
+    wishlist.push({
+        name: productName,
+        category: category,
+        price: price,
+        image: image
+    });
+
+    // Save wishlist
+    localStorage.setItem(
+        "wishlist",
+        JSON.stringify(wishlist)
+    );
+
+    alert(productName + " added to Wishlist ❤️");
 }
+/* ================= SEARCH WITH SUGGESTIONS ================= */
 
-
-
-/* ================= ENTER KEY SEARCH ================= */
-
-const searchInput =
-    document.getElementById("searchInput");
-
+const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
 
-    searchInput.addEventListener(
-        "keydown",
-        function (event) {
+    // Browser's built-in suggestion dropdown
+    searchInput.setAttribute("list", "searchSuggestions");
 
-            if (event.key === "Enter") {
+    let dataList = document.getElementById("searchSuggestions");
 
-                searchProducts();
+    if (!dataList) {
+        dataList = document.createElement("datalist");
+        dataList.id = "searchSuggestions";
+        document.body.appendChild(dataList);
+    }
 
+    // Get existing products from the Home page
+    function getProducts() {
+        const cards = document.querySelectorAll(".product-card");
+
+        return Array.from(cards).map(card => {
+            const title = card.querySelector("h3");
+            const category = card.querySelector("p");
+
+            return {
+                name: title ? title.innerText.trim() : "",
+                category: category ? category.innerText.trim() : "",
+                card: card
+            };
+        }).filter(product => product.name !== "");
+    }
+
+    // Show suggestions while typing
+    searchInput.addEventListener("input", function () {
+
+        const value = searchInput.value.trim().toLowerCase();
+
+        dataList.innerHTML = "";
+
+        if (value === "") {
+            return;
+        }
+
+        const products = getProducts();
+
+        const matches = products.filter(product =>
+            product.name.toLowerCase().includes(value) ||
+            product.category.toLowerCase().includes(value)
+        );
+
+        matches.forEach(product => {
+
+            const option = document.createElement("option");
+
+            option.value = product.name;
+
+            dataList.appendChild(option);
+        });
+    });
+
+
+    // Search button / Enter key
+    function searchProducts() {
+
+        const value = searchInput.value.trim().toLowerCase();
+
+        const products = getProducts();
+
+        if (value === "") {
+            alert("Please enter something to search.");
+            return;
+        }
+
+        let found = false;
+
+        products.forEach(product => {
+
+            const productName =
+                product.name.toLowerCase();
+
+            const productCategory =
+                product.category.toLowerCase();
+
+            if (
+                productName.includes(value) ||
+                productCategory.includes(value)
+            ) {
+                product.card.style.display = "";
+                found = true;
+            } else {
+                product.card.style.display = "none";
+            }
+        });
+
+        if (found) {
+
+            const firstResult = products.find(product =>
+                product.name.toLowerCase().includes(value) ||
+                product.category.toLowerCase().includes(value)
+            );
+
+            if (firstResult) {
+                firstResult.card.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
             }
 
+        } else {
+
+            alert("No crafts found for: " + searchInput.value);
+
+            // Show all products again
+            products.forEach(product => {
+                product.card.style.display = "";
+            });
         }
-    );
+    }
 
+
+    // Enter key
+    searchInput.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+            event.preventDefault();
+            searchProducts();
+        }
+
+    });
+
+
+    // Make search button work
+    window.searchProducts = searchProducts;
 }
-
-
 
 /* ================= INITIAL SLIDE ================= */
 

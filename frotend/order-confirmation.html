@@ -1,0 +1,326 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmation | Kalasetu</title>
+
+    <link rel="stylesheet" href="order-confirmation.css">
+</head>
+
+<body>
+
+    <!-- ================= BLAST CONTAINER ================= -->
+    <div id="confetti-container"></div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="confirmation-header">
+
+        <div class="logo-area">
+            <img src="images/kalasetu-logo.png" alt="Kalasetu">
+        </div>
+
+        <div class="brand-name">
+            <h1>Kalasetu</h1>
+            <p>TRADITION • CRAFT • STORY</p>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="confirmation-container">
+
+        <div class="confirmation-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Order Successful!</h2>
+
+            <p class="success-message">
+                Thank you for supporting handmade craftsmanship.
+                Your order has been successfully placed.
+            </p>
+
+
+            <!-- ================= ORDER DETAILS ================= -->
+
+            <div class="order-details">
+
+                <div class="detail-row">
+                    <span>Order ID</span>
+                    <strong id="orderId">--</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Order Date</span>
+                    <strong id="orderDate">--</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Payment Method</span>
+                    <strong id="paymentMethod">--</strong>
+                </div>
+
+                <div class="detail-row total-row">
+                    <span>Total Amount</span>
+                    <strong id="orderTotal">₹0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- ================= BUTTONS ================= -->
+
+            <div class="confirmation-actions">
+
+                <button
+                    type="button"
+                    class="track-btn"
+                    onclick="trackOrder()"
+                >
+                    Track Order
+                </button>
+
+                <button
+                    type="button"
+                    class="home-btn"
+                    onclick="window.location.href='customer-home.html'"
+                >
+                    Continue Shopping
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* ================= LOAD LATEST ORDER ================= */
+
+        const orders =
+            JSON.parse(localStorage.getItem("orders")) || [];
+
+        if (orders.length > 0) {
+
+            const latestOrder =
+                orders[orders.length - 1];
+
+            document.getElementById("orderId").textContent =
+                "#" + latestOrder.id;
+
+            document.getElementById("orderDate").textContent =
+                latestOrder.orderDate || "--";
+
+            document.getElementById("paymentMethod").textContent =
+                latestOrder.paymentMethod || "Cash on Delivery";
+
+            document.getElementById("orderTotal").textContent =
+                "₹" +
+                Number(latestOrder.total || 0)
+                    .toLocaleString("en-IN");
+        }
+
+
+        /* ================= TRACK ORDER ================= */
+
+        function trackOrder() {
+
+            window.location.href =
+                "order-tracking.html";
+
+        }
+
+
+        /* ================= ORDER SUCCESS BLAST ================= */
+
+        window.addEventListener("load", function () {
+
+            const container =
+                document.getElementById("confetti-container");
+
+            if (!container) {
+                return;
+            }
+
+            container.innerHTML = "";
+
+
+            /* ================= PARTICLE COLORS ================= */
+
+            const colors = [
+                "#6f593f",
+                "#8b6f47",
+                "#c89f6a",
+                "#d8b48a",
+                "#7f9b67",
+                "#b98b5f",
+                "#a66a45"
+            ];
+
+
+            /* ================= SCREEN CENTER ================= */
+
+            const centerX =
+                window.innerWidth / 2;
+
+            const centerY =
+                window.innerHeight / 2;
+
+
+            /* ================= CREATE PARTICLES ================= */
+
+            for (let i = 0; i < 100; i++) {
+
+                const particle =
+                    document.createElement("div");
+
+
+                /* Position */
+
+                particle.style.position = "fixed";
+
+                particle.style.left =
+                    centerX + "px";
+
+                particle.style.top =
+                    centerY + "px";
+
+
+                /* Size */
+
+                particle.style.width =
+                    (5 + Math.random() * 8) + "px";
+
+                particle.style.height =
+                    (8 + Math.random() * 14) + "px";
+
+
+                /* Color */
+
+                particle.style.backgroundColor =
+                    colors[
+                        Math.floor(
+                            Math.random() * colors.length
+                        )
+                    ];
+
+
+                /* Shape */
+
+                particle.style.borderRadius =
+                    "2px";
+
+
+                /* Layer */
+
+                particle.style.zIndex =
+                    "99999";
+
+                particle.style.pointerEvents =
+                    "none";
+
+
+                /* ================= RANDOM DIRECTION ================= */
+
+                const angle =
+                    Math.random() * Math.PI * 2;
+
+
+                const distance =
+                    250 + Math.random() * 550;
+
+
+                const endX =
+                    Math.cos(angle) * distance;
+
+
+                const endY =
+                    Math.sin(angle) * distance;
+
+
+                /* Random rotation */
+
+                const rotate =
+                    Math.random() * 1440;
+
+
+                /* Random speed */
+
+                const duration =
+                    900 + Math.random() * 900;
+
+
+                /* ================= ANIMATION ================= */
+
+                particle.animate(
+
+                    [
+                        {
+                            transform:
+                                "translate(-50%, -50%) scale(0.2) rotate(0deg)",
+
+                            opacity: 1
+                        },
+
+                        {
+                            transform:
+                                "translate(" +
+                                endX +
+                                "px, " +
+                                endY +
+                                "px) scale(1) rotate(" +
+                                rotate +
+                                "deg)",
+
+                            opacity: 0
+                        }
+                    ],
+
+                    {
+                        duration: duration,
+
+                        delay:
+                            Math.random() * 120,
+
+                        easing:
+                            "cubic-bezier(.15,.75,.25,1)",
+
+                        fill: "forwards"
+                    }
+
+                );
+
+
+                /* Add particle */
+
+                container.appendChild(particle);
+
+            }
+
+
+            /* ================= REMOVE PARTICLES ================= */
+
+            setTimeout(function () {
+
+                container.innerHTML = "";
+
+            }, 2200);
+
+        });
+
+    </script>
+
+</body>
+</html>

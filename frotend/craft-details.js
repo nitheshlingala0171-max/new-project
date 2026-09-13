@@ -239,11 +239,27 @@ function addToCart() {
     window.location.href = "cart.html";
 }
 
-
 /* ================= BUY NOW ================= */
 
 function buyNow() {
 
-    alert("Proceeding to checkout.");
+    if (!product) {
+        alert("Product not found.");
+        return;
+    }
 
+    const order = {
+        name: productName,
+        image: product.image,
+        category: product.category,
+        price: product.price,
+        creator: product.creator
+    };
+
+    localStorage.setItem(
+        "currentOrder",
+        JSON.stringify(order)
+    );
+
+    window.location.href = "my-orders.html";
 }
