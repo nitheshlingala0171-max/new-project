@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalasetu - Add New Craft</title>
+    <link rel="stylesheet" href="creator-add-craft.css">
+</head>
+
+<body>
+
+<div class="add-craft-container">
+
+    <header class="add-craft-header">
+
+        <div class="brand">
+
+            <div class="logo">
+                <img src="images/kalasetu-logo.png" alt="Kalasetu">
+            </div>
+
+            <div>
+                <h1>KALASETU</h1>
+                <p>CREATOR • ADD NEW CRAFT</p>
+            </div>
+
+        </div>
+
+        <button class="back-btn" onclick="goBack()">
+            ← MY CRAFTS
+        </button>
+
+    </header>
+
+
+    <main class="add-craft-main">
+
+        <section class="page-heading">
+
+            <p class="small-title">CREATOR SPACE</p>
+
+            <h2>Add New Craft</h2>
+
+            <p>
+                Add your handmade craft and share its story with customers on Kalasetu.
+            </p>
+
+        </section>
+
+
+        <section class="form-card">
+
+            <form id="addCraftForm">
+
+
+                <!-- Craft Name -->
+
+                <div class="input-group">
+
+                    <label for="craftName">
+                        Craft Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="craftName"
+                        placeholder="Enter craft name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Craft Category -->
+
+                <div class="input-group">
+
+                    <label for="craftCategory">
+                        Craft Category
+                    </label>
+
+                    <select id="craftCategory" required>
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="Pottery">
+                            Pottery
+                        </option>
+
+                        <option value="Handloom">
+                            Handloom
+                        </option>
+
+                        <option value="Woodcraft">
+                            Woodcraft
+                        </option>
+
+                        <option value="Jewellery">
+                            Jewellery
+                        </option>
+
+                        <option value="Basketry">
+                            Basketry
+                        </option>
+
+                        <option value="Painting">
+                            Painting
+                        </option>
+
+                        <option value="Embroidery">
+                            Embroidery
+                        </option>
+
+                        <option value="Home Decor">
+                            Home Decor
+                        </option>
+
+                        <option value="Leather Craft">
+                            Leather Craft
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="input-group">
+
+                    <label for="craftPrice">
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="craftPrice"
+                        placeholder="Enter price in ₹"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Craft Story -->
+
+                <div class="input-group craft-story-input">
+
+                    <label for="craftStory">
+                        Craft Story
+                    </label>
+
+                    <div class="story-input-box">
+
+                        <div class="story-symbol">
+                            “
+                        </div>
+
+                        <textarea
+                            id="craftStory"
+                            rows="6"
+                            placeholder="Tell the story behind your craft, the care you put into making it, and what makes it special..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <p class="story-helper">
+                        Share the feeling, effort and personal touch behind your handmade craft.
+                    </p>
+
+                </div>
+
+
+                <!-- Craft Image -->
+
+                <div class="input-group">
+
+                    <label for="craftImage">
+                        Craft Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="craftImage"
+                        accept="image/*"
+                        required
+                    >
+
+                    <div
+                        id="imagePreview"
+                        class="image-preview">
+                    </div>
+
+                </div>
+
+
+                <!-- Add Craft -->
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    ADD CRAFT
+                    <span>→</span>
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        HANDMADE WITH TRADITION • CONNECTED THROUGH STORIES
+    </footer>
+
+
+</div>
+
+
+<script src="creator-add-craft.js"></script>
+
+</body>
+</html>

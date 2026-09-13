@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalasetu - Creator Dashboard</title>
+
+    <link rel="stylesheet" href="creator-dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Header -->
+
+    <header class="dashboard-header">
+
+        <div class="brand">
+            <div class="logo">
+                <img src="images/kalasetu-logo.png" alt="Kalasetu">
+            </div>
+
+            <div>
+                <h1>KALASETU</h1>
+                <p>CREATOR DASHBOARD</p>
+            </div>
+        </div>
+
+        <button class="logout-btn" onclick="logout()">
+            LOGOUT
+        </button>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <main class="dashboard-main">
+
+        <!-- Welcome -->
+
+        <section class="welcome-section">
+
+            <div>
+                <p class="small-title">WELCOME CREATOR</p>
+
+                <h2 id="creatorName">
+                    Creator
+                </h2>
+
+                <p>
+                    Manage your crafts and creator profile from here.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Verification Status -->
+
+        <section class="verification-status">
+
+            <div class="status-left">
+
+                <div class="status-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <h3>Verification Status</h3>
+
+                    <p>
+                        Your creator profile is currently under admin review.
+                    </p>
+                </div>
+
+            </div>
+
+            <span id="verificationStatus" class="status-badge">
+                Under Review
+            </span>
+
+        </section>
+
+
+        <!-- Dashboard Cards -->
+
+        <section class="dashboard-grid">
+
+            <!-- My Crafts -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ◇
+                </div>
+
+                <h3>My Crafts</h3>
+
+                <p>
+                    View and manage the crafts you have added.
+                </p>
+
+                <button onclick="openMyCrafts()">
+                    VIEW CRAFTS →
+                </button>
+
+            </div>
+
+
+            <!-- Add New Craft -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    +
+                </div>
+
+                <h3>Add New Craft</h3>
+
+                <p>
+                    Add your handmade craft and product details.
+                </p>
+
+                <button onclick="addNewCraft()">
+                    ADD CRAFT →
+                </button>
+
+            </div>
+
+
+            <!-- Orders -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    □
+                </div>
+
+                <h3>Orders</h3>
+
+                <p>
+                    View and manage orders received for your crafts.
+                </p>
+
+                <button onclick="openOrders()">
+                    VIEW ORDERS →
+                </button>
+
+            </div>
+
+
+            <!-- Creator Profile -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ○
+                </div>
+
+                <h3>Creator Profile</h3>
+
+                <p>
+                    View your creator details and verification information.
+                </p>
+
+                <button onclick="openProfile()">
+                    VIEW PROFILE →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Creator Information -->
+
+        <section class="creator-info">
+
+            <h3>Creator Information</h3>
+
+            <div class="info-grid">
+
+                <div>
+                    <span>Craft / Art Type</span>
+                    <strong id="creatorCraft">
+                        Not available
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Location</span>
+                    <strong id="creatorLocation">
+                        Not available
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Experience</span>
+                    <strong id="creatorExperience">
+                        Not available
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Notice -->
+
+        <section class="dashboard-note">
+
+            <strong>Verification Notice</strong>
+
+            <p>
+                You can prepare and manage your crafts while your profile is
+                under review. Publishing and receiving customer orders will
+                become available after admin approval.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+        HANDMADE WITH TRADITION • CONNECTED THROUGH STORIES
+    </footer>
+
+</div>
+
+<script src="creator-dashboard.js"></script>
+
+</body>
+</html>
+```

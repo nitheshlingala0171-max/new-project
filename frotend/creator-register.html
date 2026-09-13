@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalasetu - Creator Registration</title>
+
+    <link rel="stylesheet" href="creator-register.css">
+</head>
+
+<body>
+
+<div class="register-container">
+
+    <div class="register-card">
+
+        <div class="logo">
+            <img
+                src="images/kalasetu-logo.png"
+                alt="Kalasetu"
+            >
+        </div>
+
+        <h1>Create Creator Account</h1>
+
+        <p class="subtitle">
+            Join Kalasetu and showcase your crafts
+        </p>
+
+
+        <form id="creatorRegisterForm">
+
+            <div class="input-group">
+
+                <label for="name">
+                    Creator Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="contact">
+                    Email or Mobile Number
+                </label>
+
+                <input
+                    type="text"
+                    id="contact"
+                    placeholder="Enter email or mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="craft">
+                    Craft / Art Type
+                </label>
+
+                <input
+                    type="text"
+                    id="craft"
+                    placeholder="Eg: Pottery, Woodcraft, Handloom"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="password">
+                    Create Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="create-btn"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+
+        <p class="login-text">
+
+            Already have an account?
+
+            <a
+                href="creator-auth.html"
+                id="loginLink"
+            >
+                Login
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="creator-register.js"></script>
+
+</body>
+
+</html>

@@ -1,19 +1,29 @@
- console.log("REGISTER JS LOADED");
- document
-    .getElementById("registerForm")
+document
+    .getElementById("creatorRegisterForm")
     .addEventListener("submit", function(event) {
 
         event.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const contact = document.getElementById("contact").value.trim();
-        const password = document.getElementById("password").value;
+        const name =
+            document.getElementById("name").value.trim();
+
+        const contact =
+            document.getElementById("contact").value.trim();
+
+        const craft =
+            document.getElementById("craft").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
         const confirmPassword =
             document.getElementById("confirmPassword").value;
+
 
         if (
             name === "" ||
             contact === "" ||
+            craft === "" ||
             password === "" ||
             confirmPassword === ""
         ) {
@@ -21,46 +31,48 @@
             return;
         }
 
+
         if (password !== confirmPassword) {
             alert("Passwords do not match.");
             return;
         }
 
-        const customer = {
+
+        const creator = {
             name: name,
             contact: contact,
+            craft: craft,
             password: password
         };
-        console.log("ABOUT TO SAVE", customer);
 
-localStorage.setItem(
-    "customerAccount",
-    JSON.stringify(customer)
-);
-
-console.log("SAVED DATA", localStorage.getItem("customerAccount"));
 
         localStorage.setItem(
-            "customerAccount",
-            JSON.stringify(customer)
+            "creatorAccount",
+            JSON.stringify(creator)
         );
 
-        alert("Account created successfully.");
 
-        window.location.href = "customer-auth.html";
+        alert("Creator account created successfully.");
+
+
+        window.location.href = "creator-auth.html";
+
     });
 
 
 /* Login */
 
-const loginLink = document.getElementById("loginLink");
+const loginLink =
+    document.getElementById("loginLink");
 
 if (loginLink) {
+
     loginLink.addEventListener("click", function(event) {
 
         event.preventDefault();
 
-        window.location.href = "customer-auth.html";
+        window.location.href = "creator-auth.html";
 
     });
+
 }

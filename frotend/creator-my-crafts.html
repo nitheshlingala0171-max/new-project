@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalasetu - My Crafts</title>
+
+    <link rel="stylesheet" href="creator-my-crafts.css">
+</head>
+
+<body>
+
+<div class="crafts-container">
+
+    <!-- Header -->
+
+    <header class="crafts-header">
+
+        <div class="brand">
+
+            <div class="logo">
+                <img src="images/kalasetu-logo.png" alt="Kalasetu">
+            </div>
+
+            <div>
+                <h1>KALASETU</h1>
+                <p>CREATOR • MY CRAFTS</p>
+            </div>
+
+        </div>
+
+        <button class="back-btn" onclick="goDashboard()">
+            ← DASHBOARD
+        </button>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <main class="crafts-main">
+
+        <section class="page-heading">
+
+            <div>
+                <p class="small-title">CREATOR SPACE</p>
+
+                <h2>My Crafts</h2>
+
+                <p>
+                    Manage the handmade crafts you have added to Kalasetu.
+                </p>
+            </div>
+
+            <button class="add-btn" onclick="addNewCraft()">
+                + ADD NEW CRAFT
+            </button>
+
+        </section>
+
+
+        <!-- Verification Notice -->
+
+        <section class="review-notice">
+
+            <div class="notice-icon">✓</div>
+
+            <div>
+                <strong id="verificationTitle">
+                    Verification Status: Under Review
+                </strong>
+
+                <p id="verificationMessage">
+                    Your crafts can be prepared while your creator profile
+                    is being reviewed by the admin.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Crafts -->
+
+        <section class="crafts-section">
+
+            <div class="section-title">
+
+                <h3>Your Crafts</h3>
+
+                <span id="craftCount">
+                    0 Crafts
+                </span>
+
+            </div>
+
+
+            <div id="craftsList" class="crafts-grid"></div>
+
+
+            <!-- Empty State -->
+
+            <div id="emptyState" class="empty-state">
+
+                <div class="empty-icon">◇</div>
+
+                <h3>No Crafts Added Yet</h3>
+
+                <p>
+                    Start adding your handmade crafts to showcase them
+                    on Kalasetu.
+                </p>
+
+                <button onclick="addNewCraft()">
+                    ADD YOUR FIRST CRAFT →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        HANDMADE WITH TRADITION • CONNECTED THROUGH STORIES
+    </footer>
+
+</div>
+
+
+<script src="creator-my-crafts.js"></script>
+
+</body>
+</html>

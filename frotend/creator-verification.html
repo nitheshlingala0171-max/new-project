@@ -1,0 +1,200 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalasetu - Creator Verification</title>
+    <link rel="stylesheet" href="creator-verification.css">
+</head>
+
+<body>
+
+<div class="verification-container">
+
+    <div class="verification-card">
+
+        <div class="logo">
+            <img src="images/kalasetu-logo.png" alt="Kalasetu">
+        </div>
+
+        <p class="small-title">CREATOR VERIFICATION</p>
+
+        <h1>Verify Your Profile</h1>
+
+        <p class="subtitle">
+            Verify your handmade craft profile to become a creator on Kalasetu.
+        </p>
+
+        <!-- Steps -->
+
+        <div class="steps">
+
+            <div class="step active">
+                <div class="step-number">1</div>
+                <span>Details</span>
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <span>Review</span>
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <span>Approval</span>
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <span>Dashboard</span>
+            </div>
+
+        </div>
+
+
+        <form id="verificationForm">
+
+            <!-- Craft Type -->
+
+            <div class="input-group">
+
+                <label for="craftType">
+                    Craft / Art Type
+                </label>
+
+                <select id="craftType" required>
+
+                    <option value="">
+                        Select your craft / art type
+                    </option>
+
+                    <option value="Pottery">
+                        Pottery
+                    </option>
+
+                    <option value="Handloom">
+                        Handloom
+                    </option>
+
+                    <option value="Woodcraft">
+                        Woodcraft
+                    </option>
+
+                    <option value="Jewellery">
+                        Jewellery
+                    </option>
+
+                    <option value="Basketry">
+                        Basketry
+                    </option>
+
+                    <option value="Painting">
+                        Painting
+                    </option>
+
+                    <option value="Embroidery">
+                        Embroidery
+                    </option>
+
+                    <option value="Leather Craft">
+                        Leather Craft
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Location -->
+
+            <div class="input-group">
+
+                <label for="location">
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Enter your location"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Experience -->
+
+            <div class="input-group">
+
+                <label for="experience">
+                    Years of Experience
+                </label>
+
+                <input
+                    type="number"
+                    id="experience"
+                    placeholder="Enter years of experience"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Craft Photo -->
+
+            <div class="input-group">
+
+                <label for="craftPhoto">
+                    Handmade Craft Photo
+                </label>
+
+                <input
+                    type="file"
+                    id="craftPhoto"
+                    accept="image/*"
+                    required
+                >
+
+                <div id="photoPreview" class="photo-preview"></div>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <button type="submit" class="verify-btn">
+
+                SUBMIT FOR VERIFICATION
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+
+        <p class="verification-note">
+            Your details will be reviewed by the Kalasetu admin before creator access is approved.
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="creator-verification.js"></script>
+
+</body>
+</html>
